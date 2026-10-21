@@ -177,7 +177,7 @@
 
 .prompter-text { display: none; }
 .prompter { margin: 0; height: 100vh; display: flex; flex-direction: column; background: var(--ink); }
-.prompter .reveal { flex: none; width: min(100vw, calc(76vh * 16 / 9)); height: min(76vh, calc(100vw * 9 / 16)); margin: 0 auto; }
+.prompter .reveal { flex: none; width: min(100vw, calc(83vh * 16 / 9)); height: min(83vh, calc(100vw * 9 / 16)); margin: 0 auto; }
 .prompter .prompter-text {
   display: block;
   flex: 1;
