@@ -1011,35 +1011,128 @@ import com.familiar.app.ui.theme.Spacing
 </section>
 
 <section>
-  <span class="kicker">Эстимейты</span>
+  <span class="kicker">Эстимейты – план против факта</span>
   <h2>Familiar</h2>
-  <div class="cols top" style="margin-top: 40px;">
+  <div class="cols equal">
     <div class="card">
-      <div class="label">По плану</div>
-      <p class="big-number" style="color: var(--muted);">900+ ч</p>
+      <div class="label">По оценке агента</div>
+      <p class="big-number" style="font-size: 96px; color: var(--muted);">600+ ч</p>
+      <p class="muted" style="margin: 24px 0 0;">около 4 месяцев полной занятости</p>
     </div>
     <div class="card">
       <div class="label">Фактически</div>
-      <p class="big-number gradient-text">80 ч</p>
-      <p class="muted" style="margin: 16px 0 0;">+ багфиксинг</p>
+      <p class="big-number gradient-text" style="font-size: 96px;">80 ч</p>
+      <p class="muted" style="margin: 24px 0 0;">2 недели разработки, затем тестирование</p>
     </div>
+  </div>
+  <p class="ratio">в <b>7</b> раз быстрее плана</p>
+</section>
+
+<section>
+  <span class="kicker">Эстимейты – план против факта</span>
+  <h2>WalkPick</h2>
+  <div class="cols equal">
+    <div class="card">
+      <div class="label">По оценке агента</div>
+      <p class="big-number" style="font-size: 96px; color: var(--muted);">775 ч</p>
+      <p class="muted" style="margin: 24px 0 0;">около 5 месяцев: MVP – 500 ч, вторая итерация – 275 ч</p>
+    </div>
+    <div class="card">
+      <div class="label">Фактически</div>
+      <p class="big-number gradient-text" style="font-size: 96px;">80 ч</p>
+      <p class="muted" style="margin: 24px 0 0;">2 недели: по 40 ч на MVP и на вторую итерацию</p>
+    </div>
+  </div>
+  <p class="ratio">почти в <b>10</b> раз быстрее плана</p>
+</section>
+
+<section>
+  <span class="kicker">Эстимейты</span>
+  <h2>Оценки агента совпадают с отраслевыми</h2>
+  <div class="stats">
+    <div class="stat"><b>4–5 мес.</b><span>оценка агента для моих двух приложений</span></div>
+    <div class="stat"><b>4,5 мес.</b><span>в среднем на приложение средней сложности, опрос GoodFirms</span></div>
+    <div class="stat"><b>4–8 мес.</b><span>срок для таких проектов в отраслевых обзорах</span></div>
   </div>
 </section>
 
 <section>
   <span class="kicker">Эстимейты</span>
-  <h2>WalkPick</h2>
-  <div class="bars">
-    <div class="row">
-      <strong>MVP</strong>
-      <div class="bar plan" style="width: 100%;">по плану 740 ч</div>
-      <div class="bar fact" style="width: 5%;">фактически 40 ч</div>
+  <h2>Оговорки</h2>
+  <div class="facts">
+    <div class="card"><strong>Опыт.</strong> Агент считал для разработчика, который уже знает Kotlin. Я его не знала</div>
+    <div class="card"><strong>Дизайн.</strong> В оценку вошёл только код. Макеты агенту пришлось рисовать сверх плана</div>
+  </div>
+  <p class="ratio" style="margin-top: 48px;">И всё равно разница – <b>почти на порядок</b></p>
+  <img class="pose-corner" src="images/kodee-naughty.png" alt="">
+</section>
+
+<section>
+  <span class="kicker">Фредерик Брукс, 1986</span>
+  <h2>«Серебряной пули нет»</h2>
+  <div class="cols">
+    <div class="narrow"><img class="photo" src="images/fred-brooks.webp" alt="Фредерик Брукс"></div>
+    <div>
+      <p class="quote-text">«Нет ни одного открытия ни в технологиях, ни в управлении, которое само по себе обещало бы за десятилетие хотя бы десятикратный рост производительности, надёжности или простоты».</p>
+      <p class="cite">Frederick P. Brooks, Jr. «No Silver Bullet – Essence and Accident in Software Engineering»</p>
     </div>
-    <div class="row">
-      <strong>Итерация 2</strong>
-      <div class="bar plan" style="width: 56%;">по плану 412 ч</div>
-      <div class="bar fact" style="width: 5%;">фактически 40 ч</div>
+  </div>
+  <span class="credit">Фото: SD&amp;M, Wikimedia Commons, CC BY-SA 3.0</span>
+</section>
+
+<section>
+  <span class="kicker">Питер Норвиг</span>
+  <h2>«Научитесь программировать за десять лет»</h2>
+  <div class="cols">
+    <div class="narrow"><img class="photo" src="images/peter-norvig.webp" alt="Питер Норвиг"></div>
+    <div>
+      <p>Бывший директор по исследованиям Google: мастерство в любой сложной области – это <strong>около десяти лет</strong> целенаправленной практики.</p>
+      <p class="muted" style="margin-top: 32px;">Это по-прежнему так. Но для работающего приложения мастерство больше не обязательно: код пишет агент, задачи и решения остаются за человеком.</p>
     </div>
+  </div>
+  <span class="credit">Фото: James Duncan Davidson, Wikimedia Commons, CC BY 2.0</span>
+</section>
+
+<section>
+  <span class="kicker">Даниэль Канеман, 1979</span>
+  <h2>Ошибка планирования</h2>
+  <div class="cols">
+    <div class="narrow"><img class="photo" src="images/daniel-kahneman.webp" alt="Даниэль Канеман"></div>
+    <div>
+      <p>Люди устойчиво недооценивают время на задачу – даже когда уже делали похожие.</p>
+      <div class="timeline">
+        <div><b>2 года</b>план группы Канемана на учебник</div>
+        <div><b>8 лет</b>сколько ушло на самом деле</div>
+      </div>
+    </div>
+  </div>
+  <span class="credit">Фото: nrkbeta, Wikimedia Commons, CC BY-SA 2.0</span>
+</section>
+
+<section>
+  <span class="kicker">Дуглас Хофштадтер, 1979</span>
+  <h2>Закон Хофштадтера</h2>
+  <div class="cols">
+    <div class="narrow"><img class="photo" src="images/douglas-hofstadter.webp" alt="Дуглас Хофштадтер"></div>
+    <div>
+      <p class="quote-text">«Это всегда занимает больше времени, чем вы ожидаете, даже если учесть закон Хофштадтера».</p>
+      <p class="cite">Douglas Hofstadter, «Gödel, Escher, Bach»</p>
+    </div>
+  </div>
+  <span class="credit">Фото: Maurizio Codogno, Wikimedia Commons, public domain</span>
+</section>
+
+<section>
+  <span class="kicker">Эстимейты</span>
+  <h2>Две недели – это ещё не готовое приложение</h2>
+  <div class="flow" style="margin-bottom: 40px; font-size: 26px;">
+    <span>Разработка – 2 недели</span><i>→</i><span>Тесты и багфиксинг – от 2 недель</span><i>→</i><span>Заказчик</span>
+  </div>
+  <div class="facts">
+    <div class="card"><strong>Устройства.</strong> Разные телефоны и версии Android</div>
+    <div class="card"><strong>Условия.</strong> Выключенный экран, нет сети, крупный шрифт, тёмная тема</div>
+    <div class="card"><strong>Края.</strong> Отказ в доступе к камере, обрыв связи при отправке</div>
+    <div class="card"><strong>Реальность.</strong> Прогулка на шесть часов</div>
   </div>
 </section>
 
@@ -1112,34 +1205,6 @@ import com.familiar.app.ui.theme.Spacing
   </div>
 </section>
 
-
-<section>
-  <span class="kicker">Эстимейты</span>
-  <h2>Familiar</h2>
-  <div class="timeline" style="margin: 0 0 120px 0;">
-    <div><b>День 1</b>Настройка окружения</div>
-    <div><b>День 2</b>«Hello world» на Kotlin</div>
-    <div><b>День 10</b>Работающее приложение Familiar</div>    
-  </div>
-  <img class="pose-corner" src="images/kodee-jumping.png" alt="">
-</section>
-
-<section>
-  <span class="kicker">Эстимейты</span>
-  <h2>WalkPick – более сложный проект, чем Familiar</h2>
-  <div class="cols equal">
-    <div class="card">
-      <div class="label">По плану</div>
-      <p class="big-number" style="font-size: 96px; color: var(--muted);">≈ 1 150 ч</p>
-      <p class="muted" style="margin: 24px 0 0;">7–8 месяцев полной занятости опытного разработчика, знакомого с Kotlin</p>
-    </div>
-    <div class="card">
-      <div class="label">Фактически</div>
-      <p class="big-number gradient-text" style="font-size: 96px;">80 ч</p>
-      <p class="muted" style="margin: 24px 0 0;">2 недели: первая – MVP, вторая – новая итерация и редизайн</p>
-    </div>
-  </div>
-</section>
 
 <section>
   <span class="kicker">Результат</span>
