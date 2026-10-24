@@ -176,17 +176,29 @@
 .facts .card { padding: 16px 24px; line-height: 1.35; }
 
 .prompter-text { display: none; }
-.prompter { margin: 0; height: 100vh; display: flex; flex-direction: column; background: var(--ink); }
-.prompter .reveal { flex: none; width: min(100vw, calc(83vh * 16 / 9)); height: min(83vh, calc(100vw * 9 / 16)); margin: 0 auto; }
+.prompter { margin: 0; height: 100vh; display: flex; align-items: center; background: var(--ink); }
+.prompter .reveal { flex: none; width: min(70vw, calc(100vh * 16 / 9)); height: min(calc(70vw * 9 / 16), 100vh); }
 .prompter .prompter-text {
-  display: block;
+  display: flex;
+  flex-direction: column;
   flex: 1;
+  align-self: stretch;
   overflow-y: auto;
-  padding: 16px max(40px, calc(50vw - 640px));
-  border-top: 1px solid var(--line);
-  font: 20px/1.5 "Segoe UI", Arial, sans-serif;
+  padding: 1em 1.2em 0.6em;
+  border-left: 1px solid var(--line);
+  font: min(1.16vw, 2.4vh)/1.4 "Segoe UI", Arial, sans-serif;
   color: var(--text);
 }
+.prompter-text .line { position: relative; padding-left: 1.1em; }
+.prompter-text .breath::before { content: "∨"; position: absolute; left: 0; color: #5fd4ff; font-weight: 700; }
+.prompter-text .gap { height: 0.7em; flex: none; }
+.prompter-text b { color: #fff; font-weight: 700; text-decoration: underline 3px var(--violet); text-underline-offset: 6px; }
+.prompter-text .tone { color: #ffb547; font-weight: 700; }
+.prompter-text .pause { margin-left: 0.3em; color: var(--coral); font-weight: 700; }
+.prompter-text .joke { margin-right: 0.2em; color: #ffd84d; }
+.prompter-text .look { color: #5fd4ff; }
+.prompter-text .cue { color: var(--muted); font-style: italic; }
+.prompter-text .legend { margin-top: auto; padding-top: 0.6em; font-size: 0.6em; color: var(--muted); }
 
 .chips { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 40px; }
 .chips .card { display: flex; flex-direction: column; gap: 8px; }
@@ -240,6 +252,3 @@
 
 .quote-text { font-size: 34px; font-weight: 600; line-height: 1.35; }
 .cite { margin-top: 24px; font-size: 22px; color: var(--muted); }
-
-/* notes above the slide */
-.prompter .prompter-text { order: -1; border-top: 0; border-bottom: 1px solid var(--line); }

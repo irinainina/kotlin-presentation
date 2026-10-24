@@ -1,590 +1,803 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Мобильная разработка на Kotlin</title>
-<link rel="stylesheet" href="reveal/reset.css">
-<link rel="stylesheet" href="reveal/reveal.css">
-<link rel="stylesheet" href="reveal/monokai.css">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<div class="reveal">
-<div class="slides">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Мобильная разработка на Kotlin</title>
+    <link rel="stylesheet" href="reveal/reset.css" />
+    <link rel="stylesheet" href="reveal/reveal.css" />
+    <link rel="stylesheet" href="reveal/monokai.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section class="cover-split">
+          <div>
+            <span class="kicker">Взгляд веб-разработчика</span>
+            <h1>Мобильная разработка<br />на <span class="gradient-text">Kotlin</span></h1>
+            <p class="muted">Чем хорош, где уступает и за что его любят разработчики</p>
+          </div>
+          <div class="cover-art"><img class="photo" src="images/cover.jpg" alt="" /></div>
+          <img class="pose-corner fragment" src="images/kodee-greeting.png" alt="Kodee, маскот Kotlin" />
+        </section>
 
-<section class="cover-split">
-  <div>
-    <span class="kicker">Взгляд веб-разработчика</span>
-    <h1>Мобильная разработка<br>на <span class="gradient-text">Kotlin</span></h1>
-    <p class="muted">Чем хорош, где уступает и за что его любят разработчики</p>
-  </div>
-  <div class="cover-art"><img class="photo" src="images/cover.jpg" alt=""></div>
-  <img class="pose-corner fragment" src="images/kodee-greeting.png" alt="Kodee, маскот Kotlin">
-</section>
+        <section>
+          <span class="kicker">Приложение первое · по заданию компании</span>
+          <h2>Familiar: пара обсуждает важные вопросы</h2>
+          <div class="cols">
+            <div class="narrow">
+              <ul>
+                <li>отмечают настроение каждого, выбирают темы, составляют общие планы, подводят итог встречи</li>
+                <li>идея, дизайн, особенности работы приложения – из ТЗ</li>
+                <li>вход через Google и почту, работает без интернета, копия истории обсуждений хранится на сервере</li>
+              </ul>
+            </div>
+            <div class="phones">
+              <img src="images/familiar-home.png" alt="" />
+              <img src="images/familiar-check-in.png" alt="" />
+              <img src="images/familiar-recap.png" alt="" />
+            </div>
+          </div>
+        </section>
 
-<section>
-  <span class="kicker">Приложение первое · по заданию компании</span>
-  <h2>Familiar: пара обсуждает важные вопросы</h2>
-  <div class="cols">
-    <div class="narrow">
-      <ul>
-        <li>отмечают настроение каждого, выбирают темы, составляют общие планы, подводят итог встречи</li>
-        <li>идея, дизайн, особенности работы приложения – из ТЗ</li>
-        <li>вход через Google и почту, работает без интернета, копия истории обсуждений хранится на сервере</li>
-      </ul>
-    </div>
-    <div class="phones">
-      <img src="images/familiar-home.png" alt="">
-      <img src="images/familiar-check-in.png" alt="">
-      <img src="images/familiar-recap.png" alt="">
-    </div>
-  </div>
-</section>
+        <section>
+          <span class="kicker">Приложение второе · своё</span>
+          <h2>WalkPick: прогулки, фото и находки</h2>
+          <div class="cols">
+            <div class="narrow">
+              <ul>
+                <li>сохраняет продолжительность, маршрут, расстояние и шаги прогулки</li>
+                <li>сохраняет фото с прогулки, распознаёт растения, птиц и известные здания</li>
+                <li>идею, дизайн и особенности работы придумала сама</li>
+              </ul>
+            </div>
+            <div class="phones">
+              <img src="images/walkpick-home.png" alt="" />
+              <img src="images/walkpick-gallery.png" alt="" />
+              <img src="images/walkpick-find.png" alt="" />
+            </div>
+          </div>
+        </section>
 
-<section>
-  <span class="kicker">Приложение второе · своё</span>
-  <h2>WalkPick: прогулки, фото и находки</h2>
-  <div class="cols">
-    <div class="narrow">
-      <ul>
-        <li>сохраняет продолжительность, маршрут, расстояние и шаги прогулки</li>
-        <li>сохраняет фото с прогулки, распознаёт растения, птиц и известные здания</li>
-        <li>идею, дизайн и особенности работы придумала сама</li>
-      </ul>
-    </div>
-    <div class="phones">
-      <img src="images/walkpick-home.png" alt="">
-      <img src="images/walkpick-gallery.png" alt="">
-      <img src="images/walkpick-find.png" alt="">
-    </div>
-  </div>
-</section>
+        <section class="part" data-mark="История">
+          <div>
+            <span class="num gradient-text">01</span>
+            <span class="kicker">Часть 1</span>
+            <h2>История создания языка программирования Kotlin</h2>
+          </div>
+          <img class="pose" src="images/kodee-relaxing.png" alt="" />
+        </section>
 
-<section class="part" data-mark="История">
-  <div>
-    <span class="num gradient-text">01</span>
-    <span class="kicker">Часть 1</span>
-    <h2>История создания языка программирования Kotlin</h2>
-  </div>
-  <img class="pose" src="images/kodee-relaxing.png" alt="">
-</section>
+        <section class="photo-slide" data-background-image="images/kotlin-island.jpg" data-background-opacity="0.45">
+          <div class="caption">
+            <span class="kicker">Происхождение названия</span>
+            <h2>Kotlin – это остров</h2>
+            <p>
+              Финский залив, Кронштадт. Окна команды JetBrains, работающей над Kotlin, выходили на этот остров.<br />У
+              Java тоже островное название.
+            </p>
+          </div>
+          <span class="credit">Фото: Wikimedia Commons</span>
+        </section>
 
-<section class="photo-slide" data-background-image="images/kotlin-island.jpg" data-background-opacity="0.45">
-  <div class="caption">
-    <span class="kicker">Происхождение названия</span>
-    <h2>Kotlin – это остров</h2>
-    <p>Финский залив, Кронштадт. Окна команды JetBrains, работающей над Kotlin, выходили на этот остров.<br>У Java тоже островное название.</p>
-  </div>
-  <span class="credit">Фото: Wikimedia Commons</span>
-</section>
+        <section class="cover-split">
+          <div>
+            <h1>Удача<br /><span class="gradient-text">или расчёт?</span></h1>
+            <p class="muted">Как язык небольшой компании стал главным языком Android</p>
+          </div>
+          <div class="cover-art">
+            <img class="photo" src="images/google-io-stage.jpg" alt="Kotlin на сцене Google I/O" />
+          </div>
+        </section>
 
-<section class="cover-split">
-  <div>
-    <h1>Удача<br><span class="gradient-text">или расчёт?</span></h1>
-    <p class="muted">Как язык небольшой компании стал главным языком Android</p>
-  </div>
-  <div class="cover-art"><img class="photo" src="images/google-io-stage.jpg" alt="Kotlin на сцене Google I/O"></div>
-</section>
+        <section>
+          <span class="kicker">1995</span>
+          <h2>Sun Microsystems создаёт Java</h2>
+          <div class="cols">
+            <div>
+              <p>Лицензия на Java принадлежит <strong>Sun Microsystems</strong>.</p>
+            </div>
+            <div class="media"><img class="photo" src="images/sun-sign.jpg" alt="Вывеска Sun Microsystems" /></div>
+          </div>
+        </section>
 
-<section>
-  <span class="kicker">1995</span>
-  <h2>Sun Microsystems создаёт Java</h2>
-  <div class="cols">
-    <div><p>Лицензия на Java принадлежит <strong>Sun Microsystems</strong>.</p></div>
-    <div class="media"><img class="photo" src="images/sun-sign.jpg" alt="Вывеска Sun Microsystems"></div>
-  </div>
-</section>
+        <section>
+          <span class="kicker">1995</span>
+          <h2>Пример действия лицензии</h2>
+          <p>
+            Для переименования LiveScript в JavaScript компании Netscape понадобилось приобрести разрешение у Sun
+            Microsystems.
+          </p>
+          <div class="center" style="margin-top: 40px">
+            <img class="photo" src="images/livescript.png" alt="Mocha → LiveScript → JavaScript" style="width: 832px" />
+          </div>
+        </section>
 
-<section>
-  <span class="kicker">1995</span>
-  <h2>Пример действия лицензии</h2>
-  <p>Для переименования LiveScript в JavaScript компании Netscape понадобилось приобрести разрешение у Sun Microsystems.</p>
-  <div class="center" style="margin-top: 40px;"><img class="photo" src="images/livescript.png" alt="Mocha → LiveScript → JavaScript" style="width: 832px;"></div>
-</section>
+        <section>
+          <span class="kicker">2010</span>
+          <h2>Oracle покупает Java и идёт в суд</h2>
+          <div class="cols">
+            <div class="narrow">
+              <ul>
+                <li><strong>Январь:</strong> Oracle покупает Sun, а вместе с ней Java</li>
+                <li><strong>Август:</strong> Oracle подаёт в суд на Google за использование Java в Android</li>
+                <li>Позже Oracle оценит ущерб в <strong>8,8 млрд $</strong></li>
+              </ul>
+            </div>
+            <div>
+              <img class="photo" src="images/oracle-comic.jpg" alt="Комикс WUMO про иск за технологию приводнения" />
+            </div>
+          </div>
+          <span class="credit">Комикс: WUMO</span>
+        </section>
 
-<section>
-  <span class="kicker">2010</span>
-  <h2>Oracle покупает Java и идёт в суд</h2>
-  <div class="cols">
-    <div class="narrow">
-      <ul>
-        <li><strong>Январь:</strong> Oracle покупает Sun, а вместе с ней Java</li>
-        <li><strong>Август:</strong> Oracle подаёт в суд на Google за использование Java в Android</li>
-        <li>Позже Oracle оценит ущерб в <strong>8,8 млрд $</strong></li>
-      </ul>
-    </div>
-    <div><img class="photo" src="images/oracle-comic.jpg" alt="Комикс WUMO про иск за технологию приводнения"></div>
-  </div>
-  <span class="credit">Комикс: WUMO</span>
-</section>
+        <section>
+          <span class="kicker">2010</span>
+          <h2>Ноябрь: JetBrains начинает работать над Kotlin</h2>
+          <div class="cols">
+            <div>
+              <p>Задача – создать <em>«better Java»</em>:</p>
+              <ul>
+                <li>работает везде, где работает Java</li>
+                <li>совместим с любым кодом на Java</li>
+                <li>короче, удобнее и безопаснее</li>
+              </ul>
+            </div>
+            <div class="media"><img class="photo" src="images/jetbrains-office.jpg" alt="Офис JetBrains" /></div>
+          </div>
+        </section>
 
-<section>
-  <span class="kicker">2010</span>
-  <h2>Ноябрь: JetBrains начинает работать над Kotlin</h2>
-  <div class="cols">
-    <div>
-      <p>Задача – создать <em>«better Java»</em>:</p>
-      <ul>
-        <li>работает везде, где работает Java</li>
-        <li>совместим с любым кодом на Java</li>
-        <li>короче, удобнее и безопаснее</li>
-      </ul>
-    </div>
-    <div class="media"><img class="photo" src="images/jetbrains-office.jpg" alt="Офис JetBrains"></div>
-  </div>
-</section>
+        <section>
+          <span class="kicker">2011</span>
+          <h2>Kotlin демонстрируют публике</h2>
+          <div class="cols">
+            <div>
+              <p>Kotlin представлен на конференции <strong>JVM Language Summit</strong>.</p>
+              <div class="card" style="margin-top: 32px">
+                <p style="margin: 0">
+                  <strong>Важная деталь:</strong> свободная лицензия – языком может пользоваться кто угодно, бесплатно и
+                  без разрешений.
+                </p>
+              </div>
+            </div>
+            <div class="media"><img class="photo" src="images/jvm-summit.jpg" alt="Зал конференции" /></div>
+          </div>
+        </section>
 
-<section>
-  <span class="kicker">2011</span>
-  <h2>Kotlin демонстрируют публике</h2>
-  <div class="cols">
-    <div>
-      <p>Kotlin представлен на конференции <strong>JVM Language Summit</strong>.</p>
-      <div class="card" style="margin-top: 32px;">
-        <p style="margin: 0;"><strong>Важная деталь:</strong> свободная лицензия – языком может пользоваться кто угодно, бесплатно и без разрешений.</p>
-      </div>
-    </div>
-    <div class="media"><img class="photo" src="images/jvm-summit.jpg" alt="Зал конференции"></div>
-  </div>
-</section>
+        <section>
+          <span class="kicker">2016</span>
+          <h2>Версия 1.0</h2>
+          <div class="cols">
+            <div>
+              <ul>
+                <li><strong>15 февраля 2016</strong> – первая стабильная версия</li>
+                <li>Обещание: код будет работать и в следующих версиях</li>
+                <li>Компании и отдельные разработчики начинают использовать Kotlin</li>
+              </ul>
+            </div>
+            <div class="media"><img class="photo" src="images/kotlin-1-0.png" alt="Kotlin 1.0" /></div>
+          </div>
+        </section>
 
-<section>
-  <span class="kicker">2016</span>
-  <h2>Версия 1.0</h2>
-  <div class="cols">
-    <div>
-      <ul>
-        <li><strong>15 февраля 2016</strong> – первая стабильная версия</li>
-        <li>Обещание: код будет работать и в следующих версиях</li>
-        <li>Android-разработчики начинают пробовать Kotlin</li>
-      </ul>
-    </div>
-    <div class="media"><img class="photo" src="images/kotlin-1-0.png" alt="Kotlin 1.0"></div>
-  </div>
-</section>
+        <section>
+          <span class="kicker">Google I/O, май 2017</span>
+          <h2>Kotlin – официальный язык Android</h2>
+          <div class="cols">
+            <div class="media">
+              <img class="photo" src="images/google-io-kotlin.jpg" alt="Объявление Kotlin на Google I/O 2017" />
+            </div>
+            <div class="stats" style="flex-direction: column">
+              <div class="stat"><b style="font-size: 40px">Овация</b><span>зал встретил новость стоя</span></div>
+              <div class="stat">
+                <b style="font-size: 40px">Сомнения</b
+                ><span>ещё один язык? маленькое сообщество, медленная сборка, зависимость от одной компании</span>
+              </div>
+            </div>
+          </div>
+        </section>
 
-<section>
-  <span class="kicker">Google I/O, май 2017</span>
-  <h2>Kotlin – официальный язык Android</h2>
-  <div class="cols">
-    <div class="media"><img class="photo" src="images/google-io-kotlin.jpg" alt="Объявление Kotlin на Google I/O 2017"></div>
-    <div class="stats" style="flex-direction: column;">
-      <div class="stat"><b style="font-size: 40px;">Овация</b><span>зал встретил новость стоя</span></div>
-      <div class="stat"><b style="font-size: 40px;">Сомнения</b><span>ещё один язык? маленькое сообщество, медленная сборка, зависимость от одной компании</span></div>
-    </div>
-  </div>
-</section>
+        <section>
+          <span class="kicker">Удача или расчёт?</span>
+          <h2>Совпадение, которое трудно не заметить</h2>
+          <div class="cols">
+            <div class="timeline vertical">
+              <div><b>2010, август</b>Oracle подаёт в суд из-за Java в Android</div>
+              <div><b>2010, ноябрь</b>JetBrains начинает работу над Kotlin</div>
+              <div><b>2016</b>Oracle требует от Google 8,8 млрд $</div>
+              <div><b>2017</b>Google поддерживает Kotlin – свободный язык, который не принадлежит Oracle</div>
+            </div>
+            <div class="media" style="flex-basis: 480px">
+              <img class="photo" src="images/oracle-vs-google.jpg" alt="Oracle против Google" />
+            </div>
+          </div>
+        </section>
 
-<section>
-  <span class="kicker">Удача или расчёт?</span>
-  <h2>Совпадение, которое трудно не заметить</h2>
-  <div class="cols">
-    <div class="timeline vertical">
-      <div><b>2010, август</b>Oracle подаёт в суд из-за Java в Android</div>
-      <div><b>2010, ноябрь</b>JetBrains начинает работу над Kotlin</div>
-      <div><b>2016</b>Oracle требует от Google 8,8 млрд $</div>
-      <div><b>2017</b>Google поддерживает Kotlin – свободный язык, который не принадлежит Oracle</div>
-    </div>
-    <div class="media" style="flex-basis: 480px;"><img class="photo" src="images/oracle-vs-google.jpg" alt="Oracle против Google"></div>
-  </div>
-</section>
+        <section class="cover-split">
+          <div>
+            <p class="quote">
+              Google связь между поддержкой Kotlin и иском по поводу использования Java
+              <span class="gradient-text">отрицает</span>.
+            </p>
+          </div>
+          <div class="cover-art"><img class="photo" src="images/google-office.jpg" alt="Офис Google" /></div>
+        </section>
 
-<section class="cover-split">
-  <div><p class="quote">Google связь между поддержкой Kotlin и иском по поводу использования Java <span class="gradient-text">отрицает</span>.</p></div>
-  <div class="cover-art"><img class="photo" src="images/google-office.jpg" alt="Офис Google"></div>
-</section>
+        <section>
+          <span class="kicker">Google I/O, 2019</span>
+          <h2>Android становится Kotlin-first</h2>
+          <div class="cols">
+            <div>
+              <ul>
+                <li>Новые библиотеки – сначала выходят на Kotlin</li>
+                <li>Примеры Google – сначала для Kotlin</li>
+                <li>Документация показывает Kotlin первым</li>
+                <li>Java поддерживается, но уже не в главной роли</li>
+              </ul>
+            </div>
+            <div class="media"><img class="photo" src="images/laptop-code.jpg" alt="Ноутбук с кодом" /></div>
+          </div>
+        </section>
 
-<section>
-  <span class="kicker">Google I/O, 2019</span>
-  <h2>Android становится Kotlin-first</h2>
-  <div class="cols">
-    <div>
-      <ul>
-        <li>Новые библиотеки – сначала выходят на Kotlin</li>
-        <li>Примеры Google – сначала для Kotlin</li>
-        <li>Документация показывает Kotlin первым</li>
-        <li>Java поддерживается, но уже не в главной роли</li>
-      </ul>
-    </div>
-    <div class="media"><img class="photo" src="images/laptop-code.jpg" alt="Ноутбук с кодом"></div>
-  </div>
-</section>
+        <section>
+          <span class="kicker">2021</span>
+          <h2>Jetpack Compose 1.0</h2>
+          <div class="cols">
+            <div>
+              <ul>
+                <li>Новый способ верстать экраны Android</li>
+                <li>Работает только с Kotlin</li>
+                <li>Современный интерфейс Android на Java уже не пишется</li>
+              </ul>
+            </div>
+            <div class="media">
+              <img class="photo" src="images/compose-phone.jpg" alt="Android-приложение на Compose" />
+            </div>
+          </div>
+        </section>
 
-<section>
-  <span class="kicker">2021</span>
-  <h2>Jetpack Compose 1.0</h2>
-  <div class="cols">
-    <div>
-      <ul>
-        <li>Новый способ верстать экраны Android</li>
-        <li>Работает только с Kotlin</li>
-        <li>Современный интерфейс Android на Java уже не пишется</li>
-      </ul>
-    </div>
-    <div class="media"><img class="photo" src="images/compose-phone.jpg" alt="Android-приложение на Compose"></div>
-  </div>
-</section>
+        <section class="photo-slide" data-background-image="images/supreme-court.jpg" data-background-opacity="0.35">
+          <div class="caption">
+            <span class="kicker">5 апреля 2021</span>
+            <h2>Верховный суд США: Google выигрывает</h2>
+            <p>
+              Шесть голосов против двух: Google использовала Java добросовестно, по правилу fair use.<br />Спор длиной в
+              11 лет закончен. Kotlin остался.
+            </p>
+          </div>
+          <span class="credit">Фото: Library of Congress, Wikimedia Commons</span>
+        </section>
 
-<section class="photo-slide" data-background-image="images/supreme-court.jpg" data-background-opacity="0.35">
-  <div class="caption">
-    <span class="kicker">5 апреля 2021</span>
-    <h2>Верховный суд США: Google выигрывает</h2>
-    <p>Шесть голосов против двух: Google использовала Java добросовестно, по правилу fair use.<br>Спор длиной в 11 лет закончен. Kotlin остался.</p>
-  </div>
-  <span class="credit">Фото: Library of Congress, Wikimedia Commons</span>
-</section>
+        <section>
+          <span class="kicker">2023</span>
+          <h2>Kotlin Multiplatform стабилен</h2>
+          <div class="cols">
+            <div>
+              <ul>
+                <li>Общий код для Android и iOS: логика, сеть, база</li>
+                <li>Интерфейс пишется отдельно для Android и для iOS</li>
+              </ul>
+            </div>
+            <div class="media"><img class="photo" src="images/kmp.jpg" alt="Kotlin Multiplatform" /></div>
+          </div>
+        </section>
 
-<section>
-  <span class="kicker">2023</span>
-  <h2>Kotlin Multiplatform стабилен</h2>
-  <div class="cols">
-    <div>
-      <ul>
-        <li>Общий код для Android и iOS: логика, сеть, база</li>
-        <li>Интерфейс пишется отдельно для Android и для iOS</li>
-      </ul>
-    </div>
-    <div class="media"><img class="photo" src="images/kmp.jpg" alt="Kotlin Multiplatform"></div>
-  </div>
-</section>
+        <section>
+          <span class="kicker">2024</span>
+          <h2>Kotlin 2.0</h2>
+          <div class="cols">
+            <div>
+              <ul>
+                <li>Компилятор переписан с нуля</li>
+                <li>Проекты собираются заметно быстрее</li>
+                <li>Одна основа для всех платформ</li>
+              </ul>
+            </div>
+            <div class="media"><img class="photo" src="images/kotlin-2-0.jpg" alt="Kotlin 2.0" /></div>
+          </div>
+        </section>
 
-<section>
-  <span class="kicker">2024</span>
-  <h2>Kotlin 2.0</h2>
-  <div class="cols">
-    <div>
-      <ul>
-        <li>Компилятор переписан с нуля</li>
-        <li>Проекты собираются заметно быстрее</li>
-        <li>Одна основа для всех платформ</li>
-      </ul>
-    </div>
-    <div class="media"><img class="photo" src="images/kotlin-2-0.jpg" alt="Kotlin 2.0"></div>
-  </div>
-</section>
+        <section>
+          <span class="kicker">2025</span>
+          <h2>Compose Multiplatform для iOS стабилен</h2>
+          <div class="cols">
+            <div><p>Общий UI-код на Kotlin и Compose для Android и iOS.</p></div>
+            <div class="media">
+              <img class="photo" src="images/compose-multiplatform.jpg" alt="Compose Multiplatform" />
+            </div>
+          </div>
+        </section>
 
-<section>
-  <span class="kicker">2025</span>
-  <h2>Compose Multiplatform для iOS стабилен</h2>
-  <div class="cols">
-    <div><p>Общий UI-код на Kotlin и Compose для Android и iOS.</p></div>
-    <div class="media"><img class="photo" src="images/compose-multiplatform.jpg" alt="Compose Multiplatform"></div>
-  </div>
-</section>
+        <section>
+          <span class="kicker">2026</span>
+          <h2>Обычный рабочий инструмент</h2>
+          <div class="cols">
+            <div class="stats" style="flex-direction: column">
+              <div class="stat"><b>60%+</b><span>профессиональных Android-разработчиков пишут на Kotlin</span></div>
+              <div class="stat"><b>95%</b><span>приложений из топ-1000 Google Play содержат код на Kotlin</span></div>
+            </div>
+            <div class="media">
+              <img class="photo" src="images/android-team.jpg" alt="Рабочее место Android-разработчиков" />
+            </div>
+          </div>
+        </section>
 
-<section>
-  <span class="kicker">2026</span>
-  <h2>Обычный рабочий инструмент</h2>
-  <div class="cols">
-    <div class="stats" style="flex-direction: column;">
-      <div class="stat"><b>60%+</b><span>профессиональных Android-разработчиков пишут на Kotlin</span></div>
-      <div class="stat"><b>95%</b><span>приложений из топ-1000 Google Play содержат код на Kotlin</span></div>
-    </div>
-    <div class="media"><img class="photo" src="images/android-team.jpg" alt="Рабочее место Android-разработчиков"></div>
-  </div>
-</section>
+        <section class="part" data-mark="Особенности">
+          <div>
+            <span class="num gradient-text">02</span>
+            <span class="kicker">Часть 2</span>
+            <h2>Особенности языка программирования Kotlin</h2>
+            <div class="tags">
+              <span>компилируемый</span><span>объектно-ориентированный</span><span>статическая типизация</span>
+            </div>
+          </div>
+          <img class="pose" src="images/kodee-naughty.png" alt="" />
+        </section>
 
-<section class="part" data-mark="Особенности">
-  <div>
-    <span class="num gradient-text">02</span>
-    <span class="kicker">Часть 2</span>
-    <h2>Особенности языка программирования Kotlin</h2>
-    <div class="tags"><span>компилируемый</span><span>объектно-ориентированный</span><span>статическая типизация</span></div>
-  </div>
-  <img class="pose" src="images/kodee-naughty.png" alt="">
-</section>
+        <section>
+          <span class="kicker">Особенности</span>
+          <h2>Компилируемый язык</h2>
+          <div class="card">
+            <div class="label">Kotlin · компилируемый</div>
+            <div class="flow">
+              <span>исходный код</span><i>→</i><span>компилятор</span><i>→</i><span>байт-код JVM</span><i>→</i
+              ><span>запуск на JVM</span>
+            </div>
+            <p style="margin: 16px 0 0">Ошибки видны уже на этапе компиляции.</p>
+          </div>
+          <div class="card" style="margin-top: 24px">
+            <div class="label">JavaScript · интерпретируемый</div>
+            <div class="flow">
+              <span>исходный код</span><i>→</i><span>движок, например V8, исполняет на лету (Just-In-Time)</span>
+            </div>
+            <p style="margin: 16px 0 0">Отдельного этапа сборки нет, ошибки видны только при выполнении.</p>
+          </div>
+        </section>
 
-<section>
-  <span class="kicker">Особенности</span>
-  <h2>Компилируемый язык</h2>
-  <div class="card">
-    <div class="label">Kotlin · компилируемый</div>
-    <div class="flow"><span>исходный код</span><i>→</i><span>компилятор</span><i>→</i><span>байт-код JVM</span><i>→</i><span>запуск на JVM</span></div>
-    <p style="margin: 16px 0 0;">Ошибки видны уже на этапе компиляции.</p>
-  </div>
-  <div class="card" style="margin-top: 24px;">
-    <div class="label">JavaScript · интерпретируемый</div>
-    <div class="flow"><span>исходный код</span><i>→</i><span>движок, например V8, исполняет на лету (Just-In-Time)</span></div>
-    <p style="margin: 16px 0 0;">Отдельного этапа сборки нет, ошибки видны только при выполнении.</p>
-  </div>
-</section>
+        <section>
+          <span class="kicker">Особенности</span>
+          <h2>Объектно-ориентированный язык</h2>
+          <div class="cols">
+            <div class="narrow">
+              <p>ООП – основная парадигма: есть классы и объекты, наследование, инкапсуляция, полиморфизм.</p>
+            </div>
+            <div>
+              <img
+                class="photo"
+                src="images/oop-comic.jpg"
+                alt="Комикс: три самых главных слова – инкапсуляция, наследование, полиморфизм"
+              />
+            </div>
+          </div>
+        </section>
 
-<section>
-  <span class="kicker">Особенности</span>
-  <h2>Объектно-ориентированный язык</h2>
-  <div class="cols">
-    <div class="narrow"><p>ООП – основная парадигма: есть классы и объекты, наследование, инкапсуляция, полиморфизм.</p></div>
-    <div><img class="photo" src="images/oop-comic.jpg" alt="Комикс: три самых главных слова – инкапсуляция, наследование, полиморфизм"></div>
-  </div>
-</section>
+        <section>
+          <span class="kicker">Особенности</span>
+          <h2>Статическая типизация</h2>
+          <div class="cols equal">
+            <div class="card">
+              <h3 style="color: #d3b8ff">Kotlin</h3>
+              <p style="margin: 0">Типы проверяются на этапе компиляции, а не в рантайме.</p>
+            </div>
+            <div class="card">
+              <h3>JavaScript</h3>
+              <p style="margin: 0">Динамическая типизация.</p>
+            </div>
+            <div class="card">
+              <h3>TypeScript</h3>
+              <p style="margin: 0">Статическая типизация, но только на этапе сборки, в рантайме типов нет.</p>
+            </div>
+          </div>
+          <img
+            class="photo banner"
+            src="images/typing-laptop.jpg"
+            alt="Руки на клавиатуре ноутбука"
+            style="height: 240px; margin-top: 32px"
+          />
+        </section>
 
-<section>
-  <span class="kicker">Особенности</span>
-  <h2>Статическая типизация</h2>
-  <div class="cols equal">
-    <div class="card"><h3 style="color: #d3b8ff;">Kotlin</h3><p style="margin: 0;">Типы проверяются на этапе компиляции, а не в рантайме.</p></div>
-    <div class="card"><h3>JavaScript</h3><p style="margin: 0;">Динамическая типизация.</p></div>
-    <div class="card"><h3>TypeScript</h3><p style="margin: 0;">Статическая типизация, но только на этапе сборки, в рантайме типов нет.</p></div>
-  </div>
-  <img class="photo banner" src="images/typing-laptop.jpg" alt="Руки на клавиатуре ноутбука" style="height: 240px; margin-top: 32px;">
-</section>
+        <section>
+          <span class="kicker">Опросы разработчиков</span>
+          <h2>Kotlin – один из любимых языков</h2>
+          <div class="center">
+            <div class="chart dark" style="display: inline-block">
+              <img src="images/survey-loved.jpg" alt="Loved: Kotlin 62,9%" style="height: 500px" />
+            </div>
+          </div>
+          <span class="credit">Stack Overflow Developer Survey 2020</span>
+        </section>
 
-<section>
-  <span class="kicker">Опросы разработчиков</span>
-  <h2>Kotlin – один из любимых языков</h2>
-  <div class="center"><div class="chart dark" style="display: inline-block;"><img src="images/survey-loved.jpg" alt="Loved: Kotlin 62,9%" style="height: 500px;"></div></div>
-  <span class="credit">Stack Overflow Developer Survey 2020</span>
-</section>
+        <section>
+          <span class="kicker">Опросы разработчиков</span>
+          <h2>Kotlin – один из самых желаемых для изучения</h2>
+          <div class="center">
+            <div class="chart dark" style="display: inline-block">
+              <img src="images/survey-wanted.jpg" alt="Wanted: Kotlin 12,6%" style="height: 500px" />
+            </div>
+          </div>
+          <span class="credit">Stack Overflow Developer Survey 2020</span>
+        </section>
 
-<section>
-  <span class="kicker">Опросы разработчиков</span>
-  <h2>Kotlin – один из самых желаемых для изучения</h2>
-  <div class="center"><div class="chart dark" style="display: inline-block;"><img src="images/survey-wanted.jpg" alt="Wanted: Kotlin 12,6%" style="height: 500px;"></div></div>
-  <span class="credit">Stack Overflow Developer Survey 2020</span>
-</section>
+        <section>
+          <span class="kicker">Опросы разработчиков</span>
+          <h2>Команды чаще всего внедряют Kotlin по инициативе самих разработчиков</h2>
+          <div class="chart center">
+            <img src="images/survey-initiative.jpg" alt="62% – разработчики" style="height: 400px" />
+          </div>
+        </section>
 
-<section>
-  <span class="kicker">Опросы разработчиков</span>
-  <h2>Команды чаще всего внедряют Kotlin по инициативе самих разработчиков</h2>
-  <div class="chart center"><img src="images/survey-initiative.jpg" alt="62% – разработчики" style="height: 400px;"></div>
-</section>
+        <section>
+          <span class="kicker">Опросы разработчиков</span>
+          <h2>Чаще всего на Kotlin переходят с Java</h2>
+          <div class="chart center">
+            <img src="images/survey-previous.jpg" alt="79% – Java" style="height: 420px" />
+          </div>
+        </section>
 
-<section>
-  <span class="kicker">Опросы разработчиков</span>
-  <h2>Чаще всего на Kotlin переходят с Java</h2>
-  <div class="chart center"><img src="images/survey-previous.jpg" alt="79% – Java" style="height: 420px;"></div>
-</section>
+        <section>
+          <span class="kicker">Опросы разработчиков</span>
+          <h2>На Kotlin пишут не только мобильные приложения</h2>
+          <div class="chart center">
+            <img
+              src="images/survey-usage.jpg"
+              alt="65% – мобильные приложения, 45% – веб-бэкенд"
+              style="height: 440px"
+            />
+          </div>
+        </section>
 
-<section>
-  <span class="kicker">Опросы разработчиков</span>
-  <h2>На Kotlin пишут не только мобильные приложения</h2>
-  <div class="chart center"><img src="images/survey-usage.jpg" alt="65% – мобильные приложения, 45% – веб-бэкенд" style="height: 440px;"></div>
-</section>
+        <section class="part" data-mark="Интересные факты">
+          <div>
+            <span class="num gradient-text">03</span>
+            <span class="kicker">Часть 3</span>
+            <h2>Интересные факты о Kotlin</h2>
+          </div>
+          <img class="pose" src="images/kodee-jumping.png" alt="" />
+        </section>
 
-<section class="part" data-mark="Интересные факты">
-  <div>
-    <span class="num gradient-text">03</span>
-    <span class="kicker">Часть 3</span>
-    <h2>Интересные факты о Kotlin</h2>
-  </div>
-  <img class="pose" src="images/kodee-jumping.png" alt="">
-</section>
-
-<section>
-  <span class="kicker">Факт первый</span>
-  <h2>Каждая функция начинается со слова <code>fun</code></h2>
-  <div class="cols">
-    <div>
-      <pre><code class="language-kotlin" data-trim data-noescape>
+        <section>
+          <span class="kicker">Факт первый</span>
+          <h2>Каждая функция начинается со слова <code>fun</code></h2>
+          <div class="cols">
+            <div>
+              <pre><code class="language-kotlin" data-trim data-noescape>
 fun main() {
     println("Hello, Kotlin!")
 }
       </code></pre>
-      <p class="muted" style="margin-top: 24px;">Шутки про весёлый язык родились вместе с ним.</p>
-    </div>
-    <div class="narrow center"><img src="images/kodee-electrified.png" alt="Kodee" style="width: 280px;"></div>
-  </div>
-</section>
+              <p class="muted" style="margin-top: 24px">Шутки про весёлый язык родились вместе с ним.</p>
+            </div>
+            <div class="narrow center"><img src="images/kodee-electrified.png" alt="Kodee" style="width: 280px" /></div>
+          </div>
+        </section>
 
-<section>
-  <span class="kicker">Факт второй</span>
-  <h2>Оператор Элвиса</h2>
-  <div class="cols">
-    <div class="narrow"><img class="photo" src="images/elvis.jpg" alt="Элвис Пресли"></div>
-    <div>
-      <p class="big-number gradient-text">?:</p>
-      <pre><code class="language-kotlin" data-trim data-noescape>
+        <section>
+          <span class="kicker">Факт второй</span>
+          <h2>Оператор Элвиса</h2>
+          <div class="cols">
+            <div class="narrow"><img class="photo" src="images/elvis.jpg" alt="Элвис Пресли" /></div>
+            <div>
+              <p class="big-number gradient-text">?:</p>
+              <pre><code class="language-kotlin" data-trim data-noescape>
 val name = user?.name ?: "Гость"
       </code></pre>
-      <p class="muted" style="margin-top: 24px;">Наклоните голову влево – и увидите чуб и глаза. В JavaScript то же делает <code>??</code></p>
-    </div>
-  </div>
-  <span class="credit">Фото: Wikimedia Commons, public domain</span>
-</section>
+              <p class="muted" style="margin-top: 24px">
+                Наклоните голову влево – и увидите чуб и глаза. В JavaScript то же делает <code>??</code>
+              </p>
+            </div>
+          </div>
+          <span class="credit">Фото: Wikimedia Commons, public domain</span>
+        </section>
 
-<section>
-  <span class="kicker">Факт третий</span>
-  <h2>Что убрали сознательно</h2>
-  <div class="cols top">
-    <div>
-      <div class="label">Java</div>
-      <pre><code class="language-java" data-trim data-noescape>
+        <section>
+          <span class="kicker">Факт третий</span>
+          <h2>Что убрали сознательно</h2>
+          <div class="cols top">
+            <div>
+              <div class="label">Java</div>
+              <pre><code class="language-java" data-trim data-noescape>
 static int max(int a, int b) {
     return a &gt; b ? a : b;
 }
       </code></pre>
-    </div>
-    <div>
-      <div class="label">Kotlin</div>
-      <pre><code class="language-kotlin" data-trim data-noescape>
+            </div>
+            <div>
+              <div class="label">Kotlin</div>
+              <pre><code class="language-kotlin" data-trim data-noescape>
 fun max(a: Int, b: Int) =
     if (a &gt; b) a else b
       </code></pre>
-    </div>
-  </div>
-  <p class="muted" style="margin-top: 32px;">Нет <code>static</code>, нет тернарного оператора, нет обязательного перечисления исключений, нет точки с запятой.</p>
-</section>
+            </div>
+          </div>
+          <p class="muted" style="margin-top: 32px">
+            Нет <code>static</code>, нет тернарного оператора, нет обязательного перечисления исключений, нет точки с
+            запятой.
+          </p>
+        </section>
 
-<section>
-  <span class="kicker">Факт четвёртый</span>
-  <h2>Android Studio – родственница WebStorm</h2>
-  <div class="cols">
-    <div>
-      <ul>
-        <li>Построена на IntelliJ IDEA от JetBrains</li>
-        <li>Те же горячие клавиши, поиск, рефакторинг</li>
-        <li>После WebStorm всё на своих местах</li>
-      </ul>
-    </div>
-    <div class="media"><img class="photo" src="images/intellij-idea.jpg" alt="IntelliJ IDEA"></div>
-  </div>
-</section>
+        <section>
+          <span class="kicker">Факт четвёртый</span>
+          <h2>Android Studio – родственница WebStorm</h2>
+          <div class="cols">
+            <div>
+              <ul>
+                <li>Построена на IntelliJ IDEA от JetBrains</li>
+                <li>Те же горячие клавиши, поиск, рефакторинг</li>
+                <li>После WebStorm всё на своих местах</li>
+              </ul>
+            </div>
+            <div class="media"><img class="photo" src="images/intellij-idea.jpg" alt="IntelliJ IDEA" /></div>
+          </div>
+        </section>
 
-<section class="part" data-mark="Kotlin и JavaScript">
-  <div>
-    <span class="num gradient-text">04</span>
-    <span class="kicker">Часть 4</span>
-    <h2>Kotlin и JavaScript</h2>
-    <p class="muted">Сюрприз для фронтендера: вы его почти уже знаете</p>
-  </div>
-  <img class="pose" src="images/kodee-excited.png" alt="">
-</section>
+        <section class="part" data-mark="Kotlin и JavaScript">
+          <div>
+            <span class="num gradient-text">04</span>
+            <span class="kicker">Часть 4</span>
+            <h2>Kotlin и JavaScript</h2>
+            <p class="muted">Сюрприз для фронтендера: вы его почти уже знаете</p>
+          </div>
+          <img class="pose" src="images/kodee-excited.png" alt="" />
+        </section>
 
-<section>
-  <span class="kicker">Kotlin и JavaScript</span>
-  <h2>Вы его почти уже знаете</h2>
-  <table style="font-size: 28px;">
-    <tr><th>Задача</th><th>TypeScript</th><th>Kotlin</th></tr>
-    <tr><td>Константа</td><td><code>const name: string</code></td><td><code>val name: String</code></td></tr>
-    <tr><td>Может не быть</td><td><code>string | null</code></td><td><code>String?</code></td></tr>
-    <tr><td>Запасное значение</td><td><code>user?.email ?? "нет"</code></td><td><code>user?.email ?: "нет"</code></td></tr>
-    <tr><td>Подстановка</td><td><code>`Привет, ${name}`</code></td><td><code>"Привет, $name"</code></td></tr>
-    <tr><td>Умеет ждать</td><td><code>async / await</code></td><td><code>suspend</code></td></tr>
-    <tr><td>Зависимости</td><td><code>package.json</code></td><td><code>libs.versions.toml</code></td></tr>
-    <tr><td>Линтер</td><td>ESLint</td><td>detekt</td></tr>
-  </table>
-</section>
+        <section>
+          <span class="kicker">Kotlin и JavaScript</span>
+          <h2>Вы его почти уже знаете</h2>
+          <table style="font-size: 28px">
+            <tr>
+              <th>Задача</th>
+              <th>TypeScript</th>
+              <th>Kotlin</th>
+            </tr>
+            <tr>
+              <td>Константа</td>
+              <td><code>const name: string</code></td>
+              <td><code>val name: String</code></td>
+            </tr>
+            <tr>
+              <td>Может не быть</td>
+              <td><code>string | null</code></td>
+              <td><code>String?</code></td>
+            </tr>
+            <tr>
+              <td>Запасное значение</td>
+              <td><code>user?.email ?? "нет"</code></td>
+              <td><code>user?.email ?: "нет"</code></td>
+            </tr>
+            <tr>
+              <td>Подстановка</td>
+              <td><code>`Привет, ${name}`</code></td>
+              <td><code>"Привет, $name"</code></td>
+            </tr>
+            <tr>
+              <td>Умеет ждать</td>
+              <td><code>async / await</code></td>
+              <td><code>suspend</code></td>
+            </tr>
+            <tr>
+              <td>Зависимости</td>
+              <td><code>package.json</code></td>
+              <td><code>libs.versions.toml</code></td>
+            </tr>
+            <tr>
+              <td>Линтер</td>
+              <td>ESLint</td>
+              <td>detekt</td>
+            </tr>
+          </table>
+        </section>
 
-<section>
-  <span class="kicker">Где вы споткнётесь</span>
-  <h2>Сложение и вычитание</h2>
-  <table style="font-size: 30px;">
-    <tr><th>Выражение</th><th>JS / TS</th><th>Kotlin</th></tr>
-    <tr><td><code>"5" + 3</code></td><td><code>"53"</code></td><td><code>"53"</code></td></tr>
-    <tr><td><code>3 + "5"</code></td><td><code>"35"</code></td><td>не соберётся</td></tr>
-    <tr><td><code>"5" - 3</code></td><td><code>2</code></td><td>не соберётся</td></tr>
-  </table>
-</section>
+        <section>
+          <span class="kicker">Где вы споткнётесь</span>
+          <h2>Сложение и вычитание</h2>
+          <table style="font-size: 30px">
+            <tr>
+              <th>Выражение</th>
+              <th>JS / TS</th>
+              <th>Kotlin</th>
+            </tr>
+            <tr>
+              <td><code>"5" + 3</code></td>
+              <td><code>"53"</code></td>
+              <td><code>"53"</code></td>
+            </tr>
+            <tr>
+              <td><code>3 + "5"</code></td>
+              <td><code>"35"</code></td>
+              <td>не соберётся</td>
+            </tr>
+            <tr>
+              <td><code>"5" - 3</code></td>
+              <td><code>2</code></td>
+              <td>не соберётся</td>
+            </tr>
+          </table>
+        </section>
 
-<section>
-  <span class="kicker">Где вы споткнётесь</span>
-  <h2>Деление и равенство</h2>
-  <table style="font-size: 30px;">
-    <tr><th>Выражение</th><th>JS / TS</th><th>Kotlin</th></tr>
-    <tr><td><code>7 / 2</code></td><td><code>3.5</code></td><td><code>3</code> – целые делятся нацело</td></tr>
-    <tr><td><code>[1, 2] == [1, 2]</code></td><td><code>false</code></td><td><code>true</code></td></tr>
-    <tr><td><code>0.1 + 0.2</code></td><td><code>0.30000000000000004</code></td><td><code>0.30000000000000004</code></td></tr>
-  </table>
-</section>
+        <section>
+          <span class="kicker">Где вы споткнётесь</span>
+          <h2>Деление и равенство</h2>
+          <table style="font-size: 30px">
+            <tr>
+              <th>Выражение</th>
+              <th>JS / TS</th>
+              <th>Kotlin</th>
+            </tr>
+            <tr>
+              <td><code>7 / 2</code></td>
+              <td><code>3.5</code></td>
+              <td><code>3</code> – целые делятся нацело</td>
+            </tr>
+            <tr>
+              <td><code>[1, 2] == [1, 2]</code></td>
+              <td><code>false</code></td>
+              <td><code>true</code></td>
+            </tr>
+            <tr>
+              <td><code>0.1 + 0.2</code></td>
+              <td><code>0.30000000000000004</code></td>
+              <td><code>0.30000000000000004</code></td>
+            </tr>
+          </table>
+        </section>
 
-<section>
-  <span class="kicker">Где вы споткнётесь</span>
-  <h2>Пустота и тернарный оператор</h2>
-  <table style="font-size: 30px;">
-    <tr><th>Понятие</th><th>JavaScript</th><th>Kotlin</th></tr>
-    <tr><td><code>undefined</code></td><td>есть, и он не <code>null</code></td><td>отсутствует</td></tr>
-    <tr><td><code>null</code></td><td>есть</td><td>есть, единственная «пустота»</td></tr>
-    <tr><td><code>ok ? a : b</code></td><td>тернарный оператор</td><td><code>if (ok) a else b</code></td></tr>
-  </table>
-</section>
+        <section>
+          <span class="kicker">Где вы споткнётесь</span>
+          <h2>Пустота и тернарный оператор</h2>
+          <table style="font-size: 30px">
+            <tr>
+              <th>Понятие</th>
+              <th>JavaScript</th>
+              <th>Kotlin</th>
+            </tr>
+            <tr>
+              <td><code>undefined</code></td>
+              <td>есть, и он не <code>null</code></td>
+              <td>отсутствует</td>
+            </tr>
+            <tr>
+              <td><code>null</code></td>
+              <td>есть</td>
+              <td>есть, единственная «пустота»</td>
+            </tr>
+            <tr>
+              <td><code>ok ? a : b</code></td>
+              <td>тернарный оператор</td>
+              <td><code>if (ok) a else b</code></td>
+            </tr>
+          </table>
+        </section>
 
-<section>
-  <span class="kicker">Kotlin и JavaScript</span>
-  <h2>Разные платформы под капотом</h2>
-  <table>
-    <tr><th></th><th>JavaScript</th><th>Kotlin на Android</th></tr>
-    <tr><td>Где работает</td><td>браузер, Node.js</td><td>виртуальная машина Android</td></tr>
-    <tr><td>Потоки</td><td>один поток и event loop</td><td>много потоков, корутины переключаются между ними</td></tr>
-    <tr><td>Типы</td><td>проверяются при запуске, TypeScript стирает их при сборке</td><td>проверяет компилятор, и они остаются в программе</td></tr>
-    <tr><td>Числа</td><td><code>Number</code> и <code>BigInt</code></td><td><code>Int</code>, <code>Long</code>, <code>Double</code>, <code>Float</code>…</td></tr>
-    <tr><td>Равенство</td><td><code>===</code> – строгое</td><td><code>==</code> – по содержимому, <code>===</code> – тот же объект</td></tr>
-    <tr><td>Сборка</td><td>Vite, webpack</td><td>Gradle</td></tr>
-    <tr><td>До пользователя</td><td>ссылка</td><td>магазин или APK-файл</td></tr>
-  </table>
-</section>
+        <section>
+          <span class="kicker">Kotlin и JavaScript</span>
+          <h2>Разные платформы под капотом</h2>
+          <table>
+            <tr>
+              <th></th>
+              <th>JavaScript/TypeScript</th>
+              <th>Kotlin на Android</th>
+            </tr>
+            <tr>
+              <td>Где работает</td>
+              <td>браузер, Node.js</td>
+              <td>виртуальная машина Android</td>
+            </tr>
+            <tr>
+              <td>Потоки</td>
+              <td>один поток<br />event loop (цикл событий)</td>
+              <td>много потоков, корутины<br />переключаются между ними</td>
+            </tr>
+            <tr>
+              <td>Типы</td>
+              <td>проверяются при запуске,<br />исчезают в рантайме</td>
+              <td>проверяет компилятор<br />сохраняются в рантайме</td>
+            </tr>
+            <tr>
+              <td>Числа</td>
+              <td><code>Number</code> и <code>BigInt</code></td>
+              <td><code>Int</code>, <code>Long</code>, <code>Double</code>, <code>Float</code>…</td>
+            </tr>
+            <tr>
+              <td>Равенство</td>
+              <td>
+                <code>==</code> – с приведением типов<br />
+                <code>===</code> – строгое
+              </td>
+              <td><code>==</code> – по содержимому<br /><code>===</code> – по ссылке</td>
+            </tr>
+            <tr>
+              <td>Сборка</td>
+              <td>Vite, webpack</td>
+              <td>Gradle</td>
+            </tr>
+            <tr>
+              <td>Доставка</td>
+              <td>ссылка</td>
+              <td>магазин или APK-файл</td>
+            </tr>
+          </table>
+        </section>
 
-<section class="part" data-mark="Преимущества">
-  <div>
-    <span class="num gradient-text">05</span>
-    <span class="kicker">Часть 5</span>
-    <h2>Преимущества Kotlin</h2>
-  </div>
-  <img class="pose" src="images/kodee-in-love.png" alt="">
-</section>
+        <section class="part" data-mark="Преимущества">
+          <div>
+            <span class="num gradient-text">05</span>
+            <span class="kicker">Часть 5</span>
+            <h2>Преимущества Kotlin</h2>
+          </div>
+          <img class="pose" src="images/kodee-in-love.png" alt="" />
+        </section>
 
-<section>
-  <span class="kicker">Плюс первый</span>
-  <h2>Не позволяет забыть про пустоту</h2>
-  <div class="cols">
-    <div class="narrow"><img class="photo" src="images/tony-hoare.jpg" alt="Тони Хоар"></div>
-    <div>
-      <p><strong>Тони Хоар</strong> придумал <code>null</code> в 1965 году и позже назвал это своей «ошибкой на миллиард долларов».</p>
-    </div>
-  </div>
-  <span class="credit">Фото: Wikimedia Commons</span>
-</section>
+        <section>
+          <span class="kicker">Плюс первый</span>
+          <h2>Не позволяет забыть про пустоту</h2>
+          <div class="cols">
+            <div class="narrow"><img class="photo" src="images/tony-hoare.jpg" alt="Тони Хоар" /></div>
+            <div>
+              <p>
+                <strong>Тони Хоар</strong> придумал <code>null</code> в 1965 году и позже назвал это своей «ошибкой на
+                миллиард долларов».
+              </p>
+            </div>
+          </div>
+          <span class="credit">Фото: Wikimedia Commons</span>
+        </section>
 
-<section>
-  <span class="kicker">Плюс первый</span>
-  <h2>NullPointerException</h2>
-  <div>
-    <div>
-      <div class="label">Java – всё выглядит нормально, пока не упадёт</div>
-      <pre><code class="language-java" data-trim data-noescape>
+        <section>
+          <span class="kicker">Плюс первый</span>
+          <h2>NullPointerException</h2>
+          <div>
+            <div>
+              <div class="label">Java – всё выглядит нормально, пока не упадёт</div>
+              <pre><code class="language-java" data-trim data-noescape>
 String name = null;
 System.out.println(name.length());
 // NPE. Привет, выходные, мы ищем ошибку
       </code></pre>
-    </div>
-    <div class="label" style="margin-top: 24px;">
-      <div class="label">Kotlin – не скомпилируется</div>
-      <pre><code class="language-kotlin" data-trim data-noescape>
+            </div>
+            <div class="label" style="margin-top: 24px">
+              <div class="label">Kotlin – не скомпилируется</div>
+              <pre><code class="language-kotlin" data-trim data-noescape>
 val name: String = null   // ошибка компиляции
 val name: String? = null  // явно nullable – окей
 println(name?.length)     // null, не упадёт
 println(name?.length ?: 0) // если null – вернёт 0
       </code></pre>
-    </div>
-  </div>
-</section>
+            </div>
+          </div>
+        </section>
 
-<section>
-  <span class="kicker">Плюс первый</span>
-  <h2>В Kotlin <code>String</code> и <code>String?</code> – разные типы</h2>
-  <p>Код, который лезет в пустоту без проверки, просто не соберётся.</p>
-  <div class="stats" style="margin-top: 40px;">
-    <div class="stat"><b>120</b><span>раз <code>?.</code> используется в рабочем проекте</span></div>
-    <div class="stat"><b>1</b><span>знак <code>?</code> отличает тип, который может быть пустым</span></div>
-  </div>
-</section>
+        <section>
+          <span class="kicker">Плюс первый</span>
+          <h2>В Kotlin <code>String</code> и <code>String?</code> – разные типы</h2>
+          <p>Код, который лезет в пустоту без проверки, просто не соберётся.</p>
+          <div class="stats" style="margin-top: 40px">
+            <div class="stat">
+              <b>120</b><span>раз <code>?.</code> используется в рабочем проекте</span>
+            </div>
+            <div class="stat">
+              <b>1</b><span>знак <code>?</code> отличает тип, который может быть пустым</span>
+            </div>
+          </div>
+        </section>
 
-<section>
-  <span class="kicker">Плюс второй</span>
-  <h2>Телефон доступен целиком</h2>
-  <ul>
-    <li><strong>Датчик шагов</strong> – напрямую, как в шагомерах</li>
-    <li><strong>GPS в фоне</strong> – как Strava пишет пробежку при выключенном экране</li>
-    <li><strong>Камера</strong> – своя, внутри приложения</li>
-    <li><strong>Нейросеть на устройстве</strong> – как Google Lens узнаёт растение без отправки фото</li>
-  </ul>
-  <div class="card" style="margin-top: 32px;"><p style="margin: 0;">Никаких мостов и обёрток: это родной язык платформы.</p></div>
-</section>
+        <section>
+          <span class="kicker">Плюс второй</span>
+          <h2>Телефон доступен целиком</h2>
+          <ul>
+            <li><strong>Датчик шагов</strong> – напрямую, как в шагомерах</li>
+            <li><strong>GPS в фоне</strong> – как Strava пишет пробежку при выключенном экране</li>
+            <li><strong>Камера</strong> – своя, внутри приложения</li>
+            <li><strong>Нейросеть на устройстве</strong> – как Google Lens узнаёт растение без отправки фото</li>
+          </ul>
+          <div class="card" style="margin-top: 32px">
+            <p style="margin: 0">Никаких мостов и обёрток: это родной язык платформы.</p>
+          </div>
+        </section>
 
-<section>
-  <span class="kicker">Плюс второй</span>
-  <h2>Подписаться на датчик шагов</h2>
-  <pre style="font-size: 28px;"><code class="language-kotlin" data-trim data-noescape>
+        <section>
+          <span class="kicker">Плюс второй</span>
+          <h2>Подписаться на датчик шагов</h2>
+          <pre style="font-size: 28px"><code class="language-kotlin" data-trim data-noescape>
 val sensor = sensorManager
     .getDefaultSensor(Sensor.TYPE_STEP_COUNTER)
 
@@ -592,13 +805,13 @@ sensorManager.registerListener(
     listener, sensor, SENSOR_DELAY_NORMAL,
 )
   </code></pre>
-  <img class="pose-corner" src="images/kodee-winter.png" alt="">
-</section>
+          <img class="pose-corner" src="images/kodee-winter.png" alt="" />
+        </section>
 
-<section>
-  <span class="kicker">Плюс третий</span>
-  <h2>Ошибки – это варианты, а не сюрпризы</h2>
-  <pre><code class="language-kotlin" data-trim data-noescape>
+        <section>
+          <span class="kicker">Плюс третий</span>
+          <h2>Ошибки – это варианты, а не сюрпризы</h2>
+          <pre><code class="language-kotlin" data-trim data-noescape>
 sealed interface GoogleResult {
     data class Token(val idToken: String) : GoogleResult
     data object Dismissed : GoogleResult
@@ -606,110 +819,133 @@ sealed interface GoogleResult {
     data class Failed(val cause: Exception) : GoogleResult
 }
   </code></pre>
-  <div class="cols top" style="margin-top: 32px;">
-    <div><p>Вход через Google: вошёл, закрыл окно, нет сети, сломалось.</p></div>
-    <div><p class="muted">Забыли вариант в <code>when</code> – проект не соберётся.</p></div>
-  </div>
-</section>
+          <div class="cols top" style="margin-top: 32px">
+            <div><p>Вход через Google: вошёл, закрыл окно, нет сети, сломалось.</p></div>
+            <div>
+              <p class="muted">Забыли вариант в <code>when</code> – проект не соберётся.</p>
+            </div>
+          </div>
+        </section>
 
-<section>
-  <span class="kicker">Плюс четвёртый</span>
-  <h2>Строгий, зато безопасный</h2>
-  <div class="stats">
-    <div class="stat"><b>264</b><span>теста в рабочем проекте запускаются на компьютере, без телефона</span></div>
-    <div class="stat"><b>0</b><span>предупреждений: каждое считается ошибкой сборки</span></div>
-    <div class="stat"><b>22 → 4,7</b><span>мегабайт: отладочная и выпускная сборка</span></div>
-  </div>
-  <div class="card" style="margin-top: 32px;">
-    <p style="margin: 0;">Правило «слой данных не знает про интерфейс» – не строчка в документации, а <strong>тест на Kotlin</strong>, который читает исходники и падает, если правило не соблюдается.</p>
-  </div>
-</section>
+        <section>
+          <span class="kicker">Плюс четвёртый</span>
+          <h2>Строгий, зато безопасный</h2>
+          <div class="stats">
+            <div class="stat">
+              <b>264</b><span>теста в рабочем проекте запускаются на компьютере, без телефона</span>
+            </div>
+            <div class="stat"><b>0</b><span>предупреждений: каждое считается ошибкой сборки</span></div>
+            <div class="stat"><b>22 → 4,7</b><span>мегабайт: отладочная и выпускная сборка</span></div>
+          </div>
+          <div class="card" style="margin-top: 32px">
+            <p style="margin: 0">
+              Правило «слой данных не знает про интерфейс» – не строчка в документации, а
+              <strong>тест на Kotlin</strong>, который читает исходники и падает, если правило не соблюдается.
+            </p>
+          </div>
+        </section>
 
-<section>
-  <span class="kicker">Плюс пятый</span>
-  <h2>Приятные бесплатности</h2>
-  <div class="cols top">
-    <div class="card">
-      <p class="big-number gradient-text" style="font-size: 110px;">0 $</p>
-      <p><strong>Google Maps в приложении для Android</strong></p>
-      <p class="muted">Бесплатно и без лимита на число показов.</p>
-    </div>
-    <div class="card">
-      <p class="big-number gradient-text" style="font-size: 110px;">20</p>
-      <p><strong>устройств бесплатно</strong></p>
-      <p class="muted">Limited distribution account в Android Developer Console: для студентов и тех, кто пишет для себя. Открыт для всех с августа 2026 года.</p>
-    </div>
-  </div>
-</section>
+        <section>
+          <span class="kicker">Плюс пятый</span>
+          <h2>Приятные бесплатности</h2>
+          <div class="cols top">
+            <div class="card">
+              <p class="big-number gradient-text" style="font-size: 110px">0 $</p>
+              <p><strong>Google Maps в приложении для Android</strong></p>
+              <p class="muted">Бесплатно и без лимита на число показов.</p>
+            </div>
+            <div class="card">
+              <p class="big-number gradient-text" style="font-size: 110px">20</p>
+              <p><strong>устройств бесплатно</strong></p>
+              <p class="muted">
+                Limited distribution account в Android Developer Console: для студентов и личных проектов. Открыт для
+                всех с августа 2026 года.
+              </p>
+            </div>
+          </div>
+        </section>
 
-<section class="part" data-mark="Недостатки">
-  <div>
-    <span class="num gradient-text">06</span>
-    <span class="kicker minus">Часть 6</span>
-    <h2>Недостатки Kotlin</h2>
-    <p class="muted">Где Kotlin уступает вебу</p>
-  </div>
-  <img class="pose" src="images/kodee-broken-hearted.png" alt="">
-</section>
+        <section class="part" data-mark="Недостатки">
+          <div>
+            <span class="num gradient-text">06</span>
+            <span class="kicker minus">Часть 6</span>
+            <h2>Недостатки Kotlin</h2>
+            <p class="muted">Где Kotlin уступает вебу</p>
+          </div>
+          <img class="pose" src="images/kodee-broken-hearted.png" alt="" />
+        </section>
 
-<section>
-  <span class="kicker minus">Минус первый</span>
-  <h2>iPhone – это отдельное приложение</h2>
-  <div class="cols">
-    <div>
-      <ul>
-        <li>Написанное для Android на iPhone не запускается</li>
-        <li>Автоматического перевода Kotlin → Swift нет</li>
-        <li>Нужен Mac: среда Apple работает только на нём</li>
-      </ul>
-      <p class="muted" style="margin-top: 24px;">Ответ – Kotlin Multiplatform: общий код и общий интерфейс. Но проект нужно с самого начала строить под две платформы.</p>
-    </div>
-    <div class="narrow center">
-      <div class="logo-plate"><img src="images/swift-logo.svg" alt="Swift" style="width: 100%;"></div>
-      <p class="muted" style="margin-top: 16px;">В вебе об этом не думаешь: ссылка открывается везде.</p>
-    </div>
-  </div>
-</section>
+        <section>
+          <span class="kicker minus">Минус первый</span>
+          <h2>iPhone – это отдельное приложение</h2>
+          <div class="cols">
+            <div>
+              <ul>
+                <li>Написанное для Android на iPhone не запускается</li>
+                <li>Автоматического перевода Kotlin → Swift нет</li>
+                <li>Нужен Mac: среда Apple работает только на нём</li>
+              </ul>
+              <p class="muted" style="margin-top: 24px">
+                Ответ – Kotlin Multiplatform: общий код и общий интерфейс. Но проект нужно с самого начала строить под
+                две платформы.
+              </p>
+            </div>
+            <div class="narrow center">
+              <div class="logo-plate"><img src="images/swift-logo.svg" alt="Swift" style="width: 100%" /></div>
+              <p class="muted" style="margin-top: 16px">В вебе об этом не думаешь: ссылка открывается везде.</p>
+            </div>
+          </div>
+        </section>
 
-<section>
-  <span class="kicker minus">Минус второй</span>
-  <h2>Нет немедленной обратной связи</h2>
-  <div class="card">
-    <div class="label">Веб</div>
-    <div class="flow"><span>написал код</span><i>→</i><span>увидел результат</span></div>
-  </div>
-  <div class="card" style="margin-top: 24px;">
-    <div class="label">Android</div>
-    <div class="flow"><span>написал код</span><i>→</i><span>сборка</span><i>→</i><span>установка на телефон</span><i>→</i><span>дошёл до нужного экрана</span><i>→</i><span>увидел результат</span></div>
-  </div>
-</section>
+        <section>
+          <span class="kicker minus">Минус второй</span>
+          <h2>Нет немедленной обратной связи</h2>
+          <div class="card">
+            <div class="label">Веб</div>
+            <div class="flow"><span>написал код</span><i>→</i><span>увидел результат</span></div>
+          </div>
+          <div class="card" style="margin-top: 24px">
+            <div class="label">Android</div>
+            <div class="flow">
+              <span>написал код</span><i>→</i><span>сборка</span><i>→</i><span>установка на телефон</span><i>→</i
+              ><span>дошёл до нужного экрана</span><i>→</i><span>увидел результат</span>
+            </div>
+          </div>
+        </section>
 
-<section>
-  <span class="kicker minus">Минус третий</span>
-  <h2>Отличия телефонов значительнее, чем отличия браузеров</h2>
-  <div class="cols top">
-    <div>
-      <div class="card">
-        <p><strong>Батарея важнее приложения.</strong></p>
-        <p class="muted" style="margin: 0;">Оболочки производителей усыпляют фоновую работу каждая по-своему. Есть даже рейтинг самых строгих.</p>
-      </div>
-      <div class="card" style="margin-top: 16px;">
-        <p><strong>Крупный шрифт в настройках.</strong></p>
-        <p class="muted" style="margin: 0;">Высота задана жёстко – текст обрезается по высоте. Лечится как в CSS: <code>min-height</code> вместо <code>height</code>.</p>
-      </div>
-    </div>
-    <div class="narrow"><img class="photo" src="images/dontkillmyapp.png" alt="Рейтинг dontkillmyapp.com"></div>
-  </div>
-  <span class="credit">dontkillmyapp.com</span>
-</section>
+        <section>
+          <span class="kicker minus">Минус третий</span>
+          <h2>Отличия телефонов значительнее, чем отличия браузеров</h2>
+          <div class="cols top">
+            <div>
+              <div class="card">
+                <p><strong>Батарея важнее приложения.</strong></p>
+                <p class="muted" style="margin: 0">
+                  Оболочки производителей усыпляют фоновую работу каждая по-своему. Есть даже рейтинг самых строгих.
+                </p>
+              </div>
+              <div class="card" style="margin-top: 16px">
+                <p><strong>Крупный шрифт в настройках.</strong></p>
+                <p class="muted" style="margin: 0">
+                  Высота задана жёстко – текст обрезается по высоте. Лечится как в CSS: <code>min-height</code> вместо
+                  <code>height</code>.
+                </p>
+              </div>
+            </div>
+            <div class="narrow">
+              <img class="photo" src="images/dontkillmyapp.png" alt="Рейтинг dontkillmyapp.com" />
+            </div>
+          </div>
+          <span class="credit">dontkillmyapp.com</span>
+        </section>
 
-<section>
-  <span class="kicker minus">Минус четвёртый</span>
-  <h2>Церемоний больше, чем в вебе</h2>
-  <div class="cols top">
-    <div>
-      <div class="label">Импорты файла с кнопкой в рабочем проекте</div>
-      <pre class="imports"><code class="language-kotlin" data-trim data-noescape>
+        <section>
+          <span class="kicker minus">Минус четвёртый</span>
+          <h2>Церемоний больше, чем в вебе</h2>
+          <div class="cols top">
+            <div>
+              <div class="label">Импорты файла с кнопкой в рабочем проекте</div>
+              <pre class="imports"><code class="language-kotlin" data-trim data-noescape>
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -738,33 +974,36 @@ import com.familiar.app.ui.theme.PillShape
 import com.familiar.app.ui.theme.Sizes
 import com.familiar.app.ui.theme.Spacing
       </code></pre>
-    </div>
-    <div class="narrow">
-      <div class="stats" style="flex-direction: column;">
-        <div class="stat"><b>27</b><span>строк импортов перед одной кнопкой</span></div>
-        <div class="stat"><b>4</b><span>разрешения: шаги, геолокация, камера, уведомления. И на каждый отказ – свой экран</span></div>
-      </div>
-    </div>
-  </div>
-</section>
+            </div>
+            <div class="narrow">
+              <div class="stats" style="flex-direction: column">
+                <div class="stat"><b>27</b><span>строк импортов перед одной кнопкой</span></div>
+                <div class="stat">
+                  <b>4</b><span>разрешения: шаги, геолокация, камера, уведомления. И на каждый отказ – свой экран</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
-<section>
-  <span class="kicker minus">Минус пятый</span>
-  <h2>12 тестировщиков на 14 дней</h2>
-  <div class="cols top">
-    <div>
-      <ul>
-        <li>Личный аккаунт Google Play, созданный после 13 ноября 2023 года</li>
-        <li>Перед публикацией – закрытый тест: не меньше <strong>12 человек</strong></li>
-        <li>Каждый участвует <strong>14 дней подряд</strong></li>
-      </ul>
-      <p class="muted" style="margin-top: 24px;">В вебе между «готово» и «у пользователя» – одна команда.</p>
-    </div>
-    <div><img class="photo" src="images/play-testing.png" alt="Справка Google Play о тестировании"></div>
-  </div>
-  <span class="credit">support.google.com/googleplay/android-developer</span>
-</section>
+        <section>
+          <span class="kicker minus">Минус пятый</span>
+          <h2>12 тестировщиков на 14 дней</h2>
+          <div class="cols top">
+            <div>
+              <ul>
+                <li>Личный аккаунт Google Play, созданный после 13 ноября 2023 года</li>
+                <li>Перед публикацией – закрытый тест: не меньше <strong>12 человек</strong></li>
+                <li>Каждый участвует <strong>14 дней подряд</strong></li>
+              </ul>
+              <p class="muted" style="margin-top: 24px">В вебе между «готово» и «у пользователя» – одна команда.</p>
+            </div>
+            <div><img class="photo" src="images/play-testing.png" alt="Справка Google Play о тестировании" /></div>
+          </div>
+          <span class="credit">support.google.com/googleplay/android-developer</span>
+        </section>
 
+        <!-- old WalkPick part, kept for reference
 <section class="part" data-mark="Проект WalkPick">
   <div>
     <span class="num gradient-text">07</span>
@@ -775,13 +1014,13 @@ import com.familiar.app.ui.theme.Spacing
   <img class="pose" src="images/kodee-waving.png" alt="">
 </section>
 
-<section class="cover center">
+<section class="cover">
   <span class="kicker">Цель</span>
   <p class="quote">Детальнее разобраться с <span class="gradient-text">мобильной разработкой</span> на Kotlin</p>
 </section>
 
 <section>
-  <span class="kicker">Сложность</span>
+  <span class="kicker">Уровень сложности</span>
   <h2>WalkPick – более сложный проект, чем Familiar</h2>
   <div class="cols">
     <div>
@@ -968,7 +1207,7 @@ import com.familiar.app.ui.theme.Spacing
 </section>
 
 <section>
-  <span class="kicker">Главная работа – не код, а выбор</span>
+  <span class="kicker">Задача человека – не код, а выбор</span>
   <h2>Агент пишет код,<br>человек принимает решения</h2>
   <div class="cols">
     <div>
@@ -984,8 +1223,8 @@ import com.familiar.app.ui.theme.Spacing
 </section>
 
 <section>
-  <span class="kicker">Агент пишет код, человек принимает решения</span>
-  <h2>Решения меняются по ходу</h2>
+  <span class="kicker">Изменения в функционале</span>
+  <h2>Решения менялись на ходу</h2>
   <div class="cols">
     <div>
       <ul>
@@ -1000,240 +1239,605 @@ import com.familiar.app.ui.theme.Spacing
     </div>
   </div>
 </section>
+-->
 
-<section class="part" data-mark="Эстимейты">
-  <div>
-    <span class="num gradient-text">08</span>
-    <span class="kicker">Часть 8</span>
-    <h2>Эстимейты</h2>
-  </div>
-  <img class="pose" src="images/kodee-sitting.png" alt="">
-</section>
+        <section class="part" data-mark="Проект WalkPick">
+          <div>
+            <span class="num gradient-text">07</span>
+            <span class="kicker">Часть 7</span>
+            <h2>Проект WalkPick</h2>
+            <div class="tags">
+              <span>цель</span><span>особенности</span><span>преимущества</span><span>детали разработки</span>
+            </div>
+          </div>
+          <img class="pose" src="images/kodee-waving.png" alt="" />
+        </section>
 
-<section>
-  <span class="kicker">Эстимейты – план против факта</span>
-  <h2>Familiar</h2>
-  <div class="cols equal">
-    <div class="card">
-      <div class="label">По оценке агента</div>
-      <p class="big-number" style="font-size: 96px; color: var(--muted);">600 ч</p>
-      <p class="muted" style="margin: 24px 0 0;">около 4 месяцев</p>
+        <section class="cover-split">
+          <div>
+            <span class="kicker">Цель первая</span>
+            <p class="quote">
+              Детальнее разобраться с <span class="gradient-text">мобильной разработкой</span> на Kotlin
+            </p>
+          </div>
+          <div class="cover-art"><img class="photo" src="images/coder-laptop.png" alt="" /></div>
+        </section>
+
+        <section class="cover-split">
+          <div>
+            <span class="kicker">Цель вторая</span>
+            <p class="quote">
+              Я очень люблю писать код<br />и <span class="gradient-text">не очень люблю гулять</span>
+            </p>
+          </div>
+          <div class="cover-art"><img class="photo" src="images/coder-walk.png" alt="" /></div>
+        </section>
+
+        <section>
+          <span class="kicker">Концепция</span>
+          <h2>Прогулка – не тренировка, а наблюдение</h2>
+          <h2 class="quote-text gradient-text">Step. Snap. See.</h2>
+          <div class="cols">
+            <div>              
+              <ul>
+                <li><strong>Движение:</strong> маршрут, шаги, расстояние, время</li>
+                <li><strong>Наблюдение:</strong> фото того, что привлекло внимание</li>
+                <li><strong>Распознавание:</strong> растения, птицы, сооружения</li>
+                <li><strong>Результаты:</strong> изменения настроения и веса на фоне графика прогулок</li>
+                <li><strong>Мягкий тон:</strong> поддерживаем любую прогулку</li>
+              </ul>
+            </div>
+            <div class="phones">
+              <img src="images/walkpick-home.png" alt="" style="height: 460px" />
+              <img src="images/walkpick-gallery.png" alt="" style="height: 460px" />
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <span class="kicker">Что умеет · прогулка</span>
+          <h2>Одна прогулка от начала до конца</h2>
+          <div class="seasons">
+            <figure>
+              <img src="images/walkpick-mood.png" alt="" />
+              <figcaption><b>Старт</b>как настроение?</figcaption>
+            </figure>
+            <figure>
+              <img src="images/walkpick-active.png" alt="" />
+              <figcaption><b>В пути</b>маршрут, шаги, камера</figcaption>
+            </figure>
+            <figure>
+              <img src="images/walkpick-summary.png" alt="" />
+              <figcaption><b>Итог</b>время, шаги, фото</figcaption>
+            </figure>
+            <figure>
+              <img src="images/walkpick-health.png" alt="" />
+              <figcaption><b>Результат</b>настроение до и после</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section>
+          <span class="kicker">Что умеет · фото</span>
+          <h2>Приложение распознаёт, что на фото</h2>
+          <div class="seasons">
+            <figure>
+              <img src="images/walkpick-find.png" alt="" />
+              <figcaption><b>Растения</b>сервис Pl@ntNet</figcaption>
+            </figure>
+            <figure>
+              <img src="images/walkpick-rook.png" alt="" />
+              <figcaption><b>Птицы</b>модель 3,5 МБ в телефоне</figcaption>
+            </figure>
+            <figure>
+              <img src="images/walkpick-fire-station.png" alt="" />
+              <figcaption><b>Здания</b>Wikidata и Google Places</figcaption>
+            </figure>
+            <figure>
+              <img src="images/walkpick-church.png" alt="" />
+              <figcaption><b>Описание</b>статья из Википедии</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section>
+          <span class="kicker">Что умеет · фото</span>
+          <h2>Простое решение вместо умного</h2>
+          <div class="cols">
+            <div>
+              <ul>
+                <li>после снимка человек выбирает что нужно распознать</li>
+                <li>уверенность ниже 20% – приложение отвечает «Unknown»</li>
+                <li>нет сети – находку назовут, когда связь вернётся</li>
+              </ul>
+              <div class="stats" style="margin-top: 32px">
+                <div class="stat"><b>7 из 10</b><span>находок третьей прогулки названы на месте</span></div>
+                <div class="stat"><b>77%</b><span>уверенность для вереска с моей фотографии</span></div>
+              </div>
+            </div>
+            <div class="phones"><img src="images/walkpick-kind.png" alt="" style="height: 500px" /></div>
+          </div>
+        </section>
+
+        <section>
+          <span class="kicker">Что умеет · здоровье</span>
+          <h2>Настроение и вес на фоне шагов</h2>
+          <div class="cols">
+            <div>
+              <ul>
+                <li>настроение отмечается до и после каждой прогулки</li>
+                <li>вес указывается по желанию, ввод вручную</li>
+                <li>на графике показатель лежит поверх столбиков шагов</li>
+                <li>приложение не даёт советов и не объясняет причин – только считает</li>
+              </ul>
+            </div>
+            <div class="phones">
+              <img src="images/walkpick-health.png" alt="" style="height: 460px" />
+              <img src="images/walkpick-weight.png" alt="" style="height: 460px" />
+            </div>
+          </div>
+        </section>
+
+        <!-- <section>
+          <span class="kicker minus">Что умеет · ограничение</span>
+          <h2>Давление и глюкоза не пройдут в Google Play</h2>
+          <div class="cols">
+            <div>
+              <ul>
+                <li>Google относит дневник давления и глюкозы к медицинским приложениям</li>
+                <li>медицинское приложение нельзя выложить с аккаунта частного лица – нужен аккаунт организации</li>
+                <li>плюс анкета о данных здоровья, политика конфиденциальности и пометка «не медицинское изделие»</li>
+                <li>
+                  <strong>Сейчас:</strong> приложение раздаётся файлом. <strong>Для магазина:</strong> эти вкладки
+                  придётся убрать
+                </li>
+              </ul>
+            </div>
+            <div class="phones"><img src="images/walkpick-pressure.png" alt="" style="height: 460px" /></div>
+          </div>
+        </section> -->
+
+        <section>
+          <span class="kicker">Особенности проекта</span>
+          <h2>Пять возможностей телефона в одном приложении</h2>
+          <div class="facts">
+            <div class="card"><strong>GPS в фоне.</strong> Маршрут пишется при выключенном экране</div>
+            <div class="card"><strong>Датчик шагов.</strong> Используем датчик встроенный в телефон</div>
+            <div class="card"><strong>Камера.</strong> Своя, после снимка распознаёт, что на нём изображено</div>
+            <div class="card"><strong>Нейросеть.</strong> Узнаёт птиц на фото без интернета</div>
+            <div class="card"><strong>Работа без сети.</strong> Всё пишется в телефон и отправляется позже</div>
+            <div class="card">
+              <strong>Фильтр GPS.</strong> Отбрасывает точки с ошибкой >30 м и скоростью >7 м/с
+            </div>
+          </div>          
+        </section>
+
+        <section>
+          <span class="kicker">Преимущества</span>
+          <h2>Чем WalkPick хорош</h2>
+          <div class="facts" style="margin-bottom: 64px">
+            <div class="card">
+              <strong>Бесплатно.</strong> Карта, база, вход, хранилище фото, погода, распознавание – всё бесплатно
+            </div>
+            <div class="card"><strong>Без сети.</strong> Прогулка, фото и записи сохраняются и без интернета</div>
+            <div class="card">
+              <strong>Мягко.</strong> Цель 5 000 шагов или своя цель в настройках. Серия дней – любая прогулка
+            </div>
+            <div class="card"><strong>Человечное.</strong> «Misty Evening» вместо «Walk 338», палитра меняется по сезону</div>
+          </div>
+          <img class="pose-corner" src="images/kodee-naughty.png" alt="" />
+        </section>
+
+        <section>
+          <span class="kicker">Как мы работали · дизайн</span>
+          <h2>Макет нарисовал агент</h2>
+          <div class="cols">
+            <div class="narrow">
+              <ul>
+                <li>Агент сам решил, какие экраны нужны</li>
+                <li>Сам придумал как они будут выглядет</li>
+                <li>Сам подобрал элементы, иконки, тексты</li>
+                <li>Сам нарисовал их в Figma</li>                
+              </ul>
+            </div>
+            <div class="phones">
+              <img src="images/mvp-signin.png" alt="" style="height: 460px" />
+              <img src="images/mvp-today.png" alt="" style="height: 460px" />              
+              <img src="images/mvp-find.png" alt="" style="height: 460px" />
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <span class="kicker">Как мы работали · дизайн</span>
+          <h2>Агент рисовал, идеи предлагала я</h2>
+          <div class="cols">
+            <div class="narrow">
+              <ul>
+                <li>Я предложила тёплую цветовую палитру</li>
+                <li>Фото, меняющиеся по временам года</li>
+                <li>Стеклянные кнопки</li>
+                <li>Иконки-смайлики настроения</li>
+                <li>Название и логотип приложения</li>
+              </ul>
+            </div>
+            <div class="phones">
+              <img src="images/signin-autumn.png" alt="" style="height: 460px" />
+              <img src="images/signin-winter.png" alt="" style="height: 460px" />
+              <img src="images/signin-spring.png" alt="" style="height: 460px" />
+            </div>
+          </div>
+        </section>
+        
+        <section class="cover center">
+          <span class="kicker">Как мы работали · проверка</span>
+          <h2 style="font-size: 60px">
+            Приложение отправляло меня гулять<br /><span class="gradient-text">ещё до того, как было готово</span>
+          </h2>
+          <p class="muted">Сайт проверяют, не вставая со стула.<br />Шагомер так не проверишь: надо встать и пойти.</p>
+        </section>
+
+        <section>
+          <span class="kicker minus">Как мы работали · проверка</span>
+          <h2>Ошибки, которые находятся только ногами</h2>
+          <div class="stats">
+            <div class="stat">
+              <b>6</b
+              ><span
+                >шагов на первой прогулке: датчик считал шаги, только когда его слушают, а приложение заглядывало
+                изредка</span
+              >
+            </div>
+            <div class="stat">
+              <b>⅔</b
+              ><span
+                >шагов пропали на второй: через три минуты после выключения экрана оболочка телефона отбирала у
+                приложения датчики</span
+              >
+            </div>
+            <div class="stat">
+              <b>0,5 км</b><span>маршрута прямой линией сквозь дома на третьей: GPS терял сигнал</span>
+            </div>
+          </div>
+          <div class="routes">
+            <img src="images/route-1.jpg" alt="" />
+            <img src="images/route-2.jpg" alt="" />
+            <img src="images/route-3.jpg" alt="" />
+          </div>
+        </section>
+
+        <section>
+          <span class="kicker">Как мы работали</span>
+          <h2>Правки</h2>
+          <div class="cols">
+            <div>
+              <ul>
+                <li>
+                  <strong>Health Connect</strong> подключили и убрали: приложение не должно зависеть от чужих программ
+                </li>                
+                <li><strong>API погоды</strong> сменили: за окном дождь, а приложение обещало тёплый день</li>
+                <li><strong>Меню</strong> за неделю менялось четыре раза</li>
+              </ul>
+            </div>
+            <div class="phones">
+              <img class="photo" src="images/home-summer.png" alt="Saturday Walk" /> 
+              <img class="photo" src="images/mvp-camera.png" alt="Saturday Walk" />
+            </div>
+  
+        </section>
+
+        <section>
+          <span class="kicker">Итог</span>
+          <h2>WalkPick сегодня</h2>
+          <div class="stats">
+            <div class="stat"><b>197</b><span>файлов на Kotlin</span></div>
+            <div class="stat"><b>19 000</b><span>строк Kotlin</span></div>
+            <div class="stat"><b>208</b><span>тестов: приложение и сервер</span></div>
+            <div class="stat"><b>82</b><span>коммита</span></div>
+          </div>
+          <p class="muted" style="margin-top: 48px">Приложение ещё не в магазине, а свою задачу уже выполняет</p>
+        </section>
+
+        <section class="part" data-mark="Эстимейты">
+          <div>
+            <span class="num gradient-text">08</span>
+            <span class="kicker">Часть 8</span>
+            <h2>Эстимейты</h2>
+          </div>
+          <img class="pose" src="images/kodee-sitting.png" alt="" />
+        </section>
+
+        <section>
+          <span class="kicker">Эстимейты – план против факта</span>
+          <h2>Familiar</h2>
+          <div class="cols equal">
+            <div class="card">
+              <div class="label">По оценке агента</div>
+              <p class="big-number" style="font-size: 96px; color: var(--muted)">600 ч</p>
+              <p class="muted" style="margin: 24px 0 0">около 4 месяцев</p>
+            </div>
+            <div class="card">
+              <div class="label">Фактически</div>
+              <p class="big-number gradient-text" style="font-size: 96px">80 ч</p>
+              <p class="muted" style="margin: 24px 0 0">2 недели</p>
+            </div>
+          </div>
+          <p class="ratio" style="margin: 24px 0 0">в <b>7,5</b> раз быстрее плана</p>
+        </section>
+
+        <section>
+          <span class="kicker">Эстимейты – план против факта</span>
+          <h2>WalkPick</h2>
+          <div class="cols equal">
+            <div class="card">
+              <div class="label">По оценке агента</div>
+              <p class="big-number" style="font-size: 96px; color: var(--muted)">775 ч</p>
+              <p class="muted" style="margin: 24px 0 0">около 5 месяцев</p>
+            </div>
+            <div class="card">
+              <div class="label">Фактически</div>
+              <p class="big-number gradient-text" style="font-size: 96px">80 ч</p>
+              <p class="muted" style="margin: 24px 0 0">2 недели</p>
+            </div>
+          </div>
+          <p class="ratio" style="margin: 24px 0 0">почти в <b>10</b> раз быстрее плана</p>
+        </section>
+
+        <section>
+          <span class="kicker">Эстимейты</span>
+          <h2>На самом деле отличие в сроках ещё больше</h2>
+          <div class="facts" style="margin: 0 0 64px">
+            <div class="card">
+              <strong>Опыт.</strong> Агент считал эстимейт для разработчика, который знает Kotlin. К началу первого
+              проекта я Kotlin не знала и знакомилась с ним по ходу разработки
+            </div>
+            <div class="card">
+              <strong>Дизайн.</strong> Агент рассчитывал только время разработки. Во втором проекте агенту пришлось
+              рисовать макеты в Figma и править функционал и экраны под меняющиеся требования
+            </div>
+          </div>
+          <img class="pose-corner" src="images/kodee-naughty.png" alt="" />
+        </section>
+
+        <section>
+          <span class="kicker">Эстимейты</span>
+          <h2>Две недели – это ещё не готовое приложение</h2>
+          <div class="flow" style="margin-bottom: 80px; font-size: 26px">
+            <span>Разработка</span><i>→</i><span>Тесты и багфиксинг</span><i>→</i><span>Заказчик</span>
+          </div>
+          <div class="facts">
+            <div class="card"><strong>Устройства.</strong> Разные телефоны и версии Android</div>
+            <div class="card"><strong>Условия.</strong> Выключенный экран, нет сети, крупный шрифт, тёмная тема</div>
+            <div class="card"><strong>Края.</strong> Отказ в доступе к камере, обрыв связи при отправке</div>
+            <div class="card"><strong>Реальность.</strong> Прогулка на шесть часов, отсутствие сигнала GPS</div>
+          </div>
+        </section>
+
+        <section>
+          <span class="kicker">Эстимейты</span>
+          <h2>Агент оценивал с запасом</h2>
+          <div class="stats" style="margin: 0 0 80px">
+            <div class="stat"><b>4–5 мес.</b><span>оценка агента, только разработка</span></div>
+            <div class="stat">
+              <b>4,5 мес.</b><span>в среднем на приложение средней сложности, опрос GoodFirms, весь цикл</span>
+            </div>
+            <div class="stat"><b>4–8 мес.</b><span>срок для таких проектов в отраслевых обзорах, весь цикл</span></div>
+          </div>
+          <img class="pose-corner" src="images/kodee-sitting.png" alt="" />
+        </section>
+
+        <section class="part" data-mark="Разработка с агентом">
+          <div>
+            <span class="num gradient-text">09</span>
+            <span class="kicker">Часть 9</span>
+            <h2>Разработка с агентом</h2>
+            <div class="tags">
+              <span>что делал агент</span><span>что делала я</span><span>выводы</span>
+            </div>
+          </div>
+          <img class="pose" src="images/kodee-electrified.png" alt="" />
+        </section>
+
+        <section class="cover-split">
+          <div>
+            <h1>Использование <span class="gradient-text">AI</span> в Familiar</h1>
+            <p>
+              <strong>Claude Code</strong> работал в папке проекта: устанавливал зависимости, писал код, запускал сборку
+              и тесты, вносил правки.
+            </p>
+          </div>
+          <div class="cover-art"><img class="photo" src="images/ai.jpg" alt="" /></div>
+        </section>
+
+        <section>
+          <h1>Использование <span class="gradient-text">AI</span> в WalkPick</h1>
+          <div class="facts" style="margin: 24px 0 0">
+            <div class="card"><strong>Идея.</strong> Сравнил похожие приложения, проверил названия на уникальность</div>
+            <div class="card"><strong>Дизайн.</strong> Рисует кадры в Figma, предлагает варианты</div>
+            <div class="card"><strong>Код.</strong> Пишет код, вносит правки, фиксит баги</div>
+            <div class="card"><strong>Проверка.</strong> Ставит на телефон, снимает экраны, сверяет с макетом</div>
+            <div class="card"><strong>Результаты.</strong> После каждой прогулки разбирает её результаты</div>
+            <div class="card"><strong>Документация.</strong> План с часами, предложения по инструментам</div>
+          </div>
+        </section>
+
+        <section>
+          <span class="kicker">Агент и человек</span>
+          <h2>Разделение задач</h2>
+          <div class="cols top">
+            <div class="card">
+              <h3 style="color: #f0a58a">Claude Code</h3>
+              <ul>
+                <li>устанавливает зависимости</li>
+                <li>пишет код и тесты</li>
+                <li>вносит правки, чинит баги</li>
+                <li>рисует макет и верстает по нему</li>
+                <li>собирает, ставит на телефон</li>
+                <li>настраивает сервисы</li>
+                <li>разбирает результаты прогулок</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3 style="color: #b7f5c5">Я</h3>
+              <ul>
+                <li>ставлю задачи</li>
+                <li>составляю правила работы агента</li>
+                <li>определяю порядок работы</li>
+                <li>оцениваю полученный результат</li>
+                <li>регистрируюсь в сервисах</li>
+                <li>ввожу пароли, получаю ключи</li>
+                <li>хожу гулять с телефоном</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <span class="kicker">Взаимодействие Kotlin и Claude Code</span>
+          <h2>Строгий язык – страховка от ошибок агента</h2>
+          <div class="cols top">
+            <div class="card">
+              <ul>
+                <li>забыл проверить на пустоту → <strong>не собралось</strong></li>
+                <li>не обработал новый вариант → <strong>не собралось</strong></li>
+                <li>оставил лишнюю переменную → <strong>не собралось</strong></li>
+                <li>подставил не тот тип → <strong>не собралось</strong></li>
+                <li>нарушил границу слоёв → <strong>упал тест</strong></li>
+              </ul>
+            </div>
+            <div>
+              <img class="photo" src="images/claude-code-android.png" alt="Claude Code" style="margin-bottom: 24px" />
+              <p>
+                Агент видит эти ошибки сразу и чинит сам.
+                <em>Чем строже компилятор, тем лучше с ним работает агент.</em>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <span class="kicker">Фредерик Брукс, 1986</span>
+          <h2>«Серебряной пули нет»</h2>
+          <div class="cols">
+            <div class="narrow"><img class="photo" src="images/fred-brooks.webp" alt="Фредерик Брукс" /></div>
+            <div>
+              <p class="quote-text">
+                «Нет ни одного открытия ни в технологиях, ни в управлении, которое само по себе обещало бы за
+                десятилетие хотя бы десятикратный рост производительности, надёжности или простоты».
+              </p>
+              <p class="cite">
+                Frederick P. Brooks, Jr. «No Silver Bullet – Essence and Accident in Software Engineering»
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <span class="kicker">Питер Норвиг</span>
+          <h2>«Научитесь программировать за десять лет»</h2>
+          <div class="cols">
+            <div class="narrow"><img class="photo" src="images/peter-norvig.webp" alt="Питер Норвиг" /></div>
+            <div>
+              <p>
+                Бывший директор по исследованиям Google: мастерство в любой сложной области – это
+                <strong>около десяти лет</strong> целенаправленной практики.
+              </p>
+              <p class="muted" style="margin-top: 32px">
+                Это по-прежнему так. Но для создания приложения со средним уровнем сложности и ответственности мастерство в конкретном языке больше не обязательно:
+                код пишет агент.
+              </p>
+              <p class="muted" style="margin-top: 32px">
+                Задачи и решения остаются за человеком, который несёт ответственность за результат разработки.
+              </p>
+            </div>
+          </div>
+          <span class="credit">Фото: James Duncan Davidson, Wikimedia Commons, CC BY 2.0</span>
+        </section>
+
+        <section>
+          <span class="kicker">Результат</span>
+          <h2>
+            Я создала два приложения на <span class="gradient-text">Kotlin.</span><br />
+            При помощи <span class="gradient-text">Claude Code</span>
+          </h2>
+          <ul style="margin-top: -120px">
+            <li><strong>Поставила задачу:</strong> сформулировала требования, прописала правила, определяла порядок работы, принимала решения.</li>
+            <li><strong>Проверила результат:</strong> предложенные правки внесены, приложение работает корректно.</li>
+            <li><strong>Использовала AI:</strong> ускорение разработки, работающий результат получили за недели, а не за месяцы.</li>
+          </ul>
+        </section>
+
+        <section class="cover center">
+          <img src="images/kodee-heart.png" alt="" style="height: 240px; margin: 0 auto 32px" />
+          <h1>Спасибо!</h1>
+        </section>
+      </div>
     </div>
-    <div class="card">
-      <div class="label">Фактически</div>
-      <p class="big-number gradient-text" style="font-size: 96px;">80 ч</p>
-      <p class="muted" style="margin: 24px 0 0;">2 недели</p>
-    </div>
-  </div>
-  <p class="ratio" style="margin: 24px 0 0;">в <b>7,5</b> раз быстрее плана</p>
-</section>
+    <div class="prompter-text"></div>
 
-<section>
-  <span class="kicker">Эстимейты – план против факта</span>
-  <h2>WalkPick</h2>
-  <div class="cols equal">
-    <div class="card">
-      <div class="label">По оценке агента</div>
-      <p class="big-number" style="font-size: 96px; color: var(--muted);">775 ч</p>
-      <p class="muted" style="margin: 24px 0 0;">около 5 месяцев</p>
-    </div>
-    <div class="card">
-      <div class="label">Фактически</div>
-      <p class="big-number gradient-text" style="font-size: 96px;">80 ч</p>
-      <p class="muted" style="margin: 24px 0 0;">2 недели</p>
-    </div>
-  </div>
-  <p class="ratio" style="margin: 24px 0 0;">почти в <b>10</b> раз быстрее плана</p>
-</section>
+    <script src="reveal/reveal.js"></script>
+    <script src="reveal/notes.js"></script>
+    <script src="reveal/highlight.js"></script>
+    <script>
+      const prompter = new URLSearchParams(location.search).has("prompter");
+      if (prompter) {
+        document.body.classList.add("prompter");
+        // marks in notes: *accent*  word↗ voice up  word↘ voice down  | pause  || long pause
+        // ⌄ breath (line start)  ☺ joke  ◉ look at the audience  [cue] stage direction
+        const legend = "↗ вверх · ↘ вниз · | пауза · || длинная · ∨ вдох · ☺ шутка · ◉ в зал";
+        const escape = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        const markLine = (line) => {
+          const breath = line.startsWith("⌄");
+          // keep dashes, pauses and ◉ on the same line as the previous word when the line wraps
+          const html = escape((breath ? line.slice(1).trim() : line).replace(/ (?=[–|◉])/g, " "))
+            .replace(/\*([^*]+)\*/g, "<b>$1</b>")
+            .replace(/\[([^\]]+)\]/g, '<span class="cue">[$1]</span>')
+            .replace(/\|\|/g, '<span class="pause long">‖</span>')
+            .replace(/\|/g, '<span class="pause">|</span>')
+            .replace(/[↗↘]/g, '<span class="tone">$&</span>')
+            .replace(/☺/g, '<span class="joke">☺</span>')
+            .replace(/◉/g, '<span class="look">◉</span>');
+          return `<div class="line${breath ? " breath" : ""}">${html}</div>`;
+        };
+        const showNotes = () => {
+          const text = document.querySelector(".prompter-text");
+          const notes = Reveal.getCurrentSlide().querySelector("aside.notes");
+          const lines = (notes ? notes.textContent : "")
+            .trim()
+            .split("\n")
+            .map((l) => l.trim());
+          text.innerHTML =
+            lines.map((l) => (l ? markLine(l) : '<div class="gap"></div>')).join("") +
+            `<div class="legend">${legend}</div>`;
+          text.scrollTop = 0;
+        };
+        Reveal.on("ready", showNotes);
+        Reveal.on("slidechanged", showNotes);
+      }
 
-<section>
-  <span class="kicker">Эстимейты</span>
-  <h2>На самом деле отличие ещё больше</h2>
-  <div class="facts" style="margin: 0 0 64px;">
-    <div class="card"><strong>Опыт.</strong> Агент считал эстимейт для разработчика, который знает Kotlin. К началу первого проекта я Kotlin не знала и знакомилась с ним по ходу разработки</div>
-    <div class="card"><strong>Дизайн.</strong> Агент рассчитывал только время разработки. Во втором проекте агенту пришлось рисовать макеты в Figma и править функционал и экраны под меняющиеся требования</div>
-  </div>  
-  <img class="pose-corner" src="images/kodee-naughty.png" alt="">
-</section>
+      let part = null;
+      for (const section of document.querySelectorAll(".slides > section")) {
+        if (section.dataset.mark) {
+          part = section;
+        } else if (part && section !== document.querySelector(".slides > section:last-child")) {
+          const mark = document.createElement("span");
+          mark.className = "part-mark";
+          mark.innerHTML = "<b>" + part.querySelector(".num").textContent + "</b> · " + part.dataset.mark;
+          section.appendChild(mark);
+        }
+      }
 
-<section>
-  <span class="kicker">Эстимейты</span>
-  <h2>Две недели – это ещё не готовое приложение</h2>
-  <div class="flow" style="margin-bottom: 40px; font-size: 26px;">
-    <span>Разработка</span><i>→</i><span>Тесты и багфиксинг</span><i>→</i><span>Заказчик</span>
-  </div>
-  <div class="facts">
-    <div class="card"><strong>Устройства.</strong> Разные телефоны и версии Android</div>
-    <div class="card"><strong>Условия.</strong> Выключенный экран, нет сети, крупный шрифт, тёмная тема</div>
-    <div class="card"><strong>Края.</strong> Отказ в доступе к камере, обрыв связи при отправке</div>
-    <div class="card"><strong>Реальность.</strong> Прогулка на шесть часов, отсутствие сигнала GPS</div>
-  </div>
-</section>
-
-<section>
-  <span class="kicker">Эстимейты</span>
-  <h2>Агент оценивал с запасом</h2>
-  <div class="stats"  style="margin: 0 0 64px;">
-    <div class="stat"><b>4–5 мес.</b><span>оценка агента, только разработка</span></div>
-    <div class="stat"><b>4,5 мес.</b><span>в среднем на приложение средней сложности, опрос GoodFirms, весь цикл</span></div>
-    <div class="stat"><b>4–8 мес.</b><span>срок для таких проектов в отраслевых обзорах, весь цикл с дизайном и тестами</span></div>
-  </div>
-</section>
-
-<section class="cover-split">
-  <div>
-    <h1>Использование <span class="gradient-text">AI</span> в Familiar</h1>
-    <p><strong>Claude Code</strong> работал в папке проекта: устанавливал зависимости, писал код, запускал сборку и тесты, смотрел, что получилось, вносил правки.</p>
-  </div>
-  <div class="cover-art"><img class="photo" src="images/ai.jpg" alt=""></div>
-</section>
-
-<section>
-  <h1>Использование <span class="gradient-text">AI</span> в WalkPick</h1>
-  <div class="facts" style="margin: 24px 0 0;">
-    <div class="card"><strong>Идея.</strong> Сравнил похожие приложения, проверил названия на уникальность</div>
-    <div class="card"><strong>Дизайн.</strong> Рисует кадры в Figma, предлагает варианты</div>
-    <div class="card"><strong>Код.</strong> Пишет код, вносит правки, фиксит баги</div>
-    <div class="card"><strong>Проверка.</strong> Ставит на телефон, снимает экраны, сверяет с макетом</div>
-    <div class="card"><strong>Результаты.</strong> После каждой прогулки разбирает её результаты</div>
-    <div class="card"><strong>Документация.</strong> План с часами, предложения по инструментам</div>
-  </div>
-</section>
-
-<section>
-  <span class="kicker">Агент и человек</span>
-  <h2>Разделение задач</h2>
-  <div class="cols top">
-    <div class="card">
-      <h3 style="color: #f0a58a;">Claude Code</h3>
-      <ul>
-        <li>устанавливает зависимости</li>
-        <li>пишет код и тесты</li>
-        <li>вносит правки, чинит баги</li>
-        <li>рисует макет и верстает по нему</li>
-        <li>собирает, ставит на телефон</li>
-        <li>настраивает сервисы</li>
-        <li>разбирает результаты прогулок</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3 style="color: #b7f5c5;">Я</h3>
-      <ul>
-        <li>ставлю задачи</li>
-        <li>составляю правила работы агента</li>
-        <li>определяю порядок работы</li>
-        <li>оцениваю полученный результат</li>
-        <li>регистрируюсь в сервисах</li>
-        <li>ввожу пароли, получаю ключи</li>
-        <li>хожу гулять с телефоном</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section>
-  <span class="kicker">Взаимодействие Kotlin и Claude Code</span>
-  <h2>Строгий язык – страховка от ошибок агента</h2>
-  <div class="cols top">
-    <div class="card">
-      <ul>
-        <li>забыл проверить на пустоту → <strong>не собралось</strong></li>
-        <li>не обработал новый вариант → <strong>не собралось</strong></li>
-        <li>оставил лишнюю переменную → <strong>не собралось</strong></li>
-        <li>нарушил границу слоёв → <strong>упал тест</strong></li>
-      </ul>
-    </div>
-    <div>
-      <img class="photo" src="images/claude-code-android.png" alt="Claude Code" style="margin-bottom: 24px;">
-      <p>Агент видит эти ошибки сразу и чинит сам. <em>Чем строже компилятор, тем лучше с ним работает агент.</em></p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <span class="kicker">Фредерик Брукс, 1986</span>
-  <h2>«Серебряной пули нет»</h2>
-  <div class="cols">
-    <div class="narrow"><img class="photo" src="images/fred-brooks.webp" alt="Фредерик Брукс"></div>
-    <div>
-      <p class="quote-text">«Нет ни одного открытия ни в технологиях, ни в управлении, которое само по себе обещало бы за десятилетие хотя бы десятикратный рост производительности, надёжности или простоты».</p>
-      <p class="cite">Frederick P. Brooks, Jr. «No Silver Bullet – Essence and Accident in Software Engineering»</p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <span class="kicker">Питер Норвиг</span>
-  <h2>«Научитесь программировать за десять лет»</h2>
-  <div class="cols">
-    <div class="narrow"><img class="photo" src="images/peter-norvig.webp" alt="Питер Норвиг"></div>
-    <div>
-      <p>Бывший директор по исследованиям Google: мастерство в любой сложной области – это <strong>около десяти лет</strong> целенаправленной практики.</p>
-      <p class="muted" style="margin-top: 32px;">Это по-прежнему так. Но для работающего приложения мастерство в конкретном языке больше не обязательно: код пишет агент, задачи и решения остаются за человеком</p>
-    </div>
-  </div>
-  <span class="credit">Фото: James Duncan Davidson, Wikimedia Commons, CC BY 2.0</span>
-</section>
-
-
-<section>
-  <span class="kicker">Результат</span>
-  <h2>Я не стала Android-разработчиком.<br>Я стала тем, кто <span class="gradient-text">может им руководить</span></h2>
-  <ul style="margin-top: -120px;">
-    <li>Написать такой код с чистого листа сама я не смогу</li>
-    <li>Прочитать, понять, заметить странное, принять решение, предложить новый вариант – могу</li>
-    <li>Такой подход ускоряет разработку: клиент получает работающий результат за недели, а не за месяцы</li>
-  </ul>
-</section>
-
-<section class="cover center">
-  <img src="images/kodee-heart.png" alt="" style="height: 240px; margin: 0 auto 32px;">
-  <h1>Спасибо!</h1>
-</section>
-
-</div>
-</div>
-<div class="prompter-text"></div>
-
-<script src="reveal/reveal.js"></script>
-<script src="reveal/notes.js"></script>
-<script src="reveal/highlight.js"></script>
-<script>
-  const prompter = new URLSearchParams(location.search).has('prompter');
-  if (prompter) {
-    document.body.classList.add('prompter');
-    const showNotes = () => {
-      const text = document.querySelector('.prompter-text');
-      text.textContent = Reveal.getSlideNotes() || '';
-      text.scrollTop = 0;
-    };
-    Reveal.on('ready', showNotes);
-    Reveal.on('slidechanged', showNotes);
-  }
-
-  let part = null;
-  for (const section of document.querySelectorAll('.slides > section')) {
-    if (section.dataset.mark) {
-      part = section;
-    } else if (part && section !== document.querySelector('.slides > section:last-child')) {
-      const mark = document.createElement('span');
-      mark.className = 'part-mark';
-      mark.innerHTML = '<b>' + part.querySelector('.num').textContent + '</b> · ' + part.dataset.mark;
-      section.appendChild(mark);
-    }
-  }
-
-  Reveal.initialize({
-    embedded: prompter,
-    width: 1280,
-    height: 720,
-    margin: 0.04,
-    center: false,
-    hash: true,
-    slideNumber: 'c/t',
-    transition: 'fade',
-    plugins: [RevealNotes, RevealHighlight],
-  });
-</script>
-</body>
+      Reveal.initialize({
+        embedded: prompter,
+        width: 1280,
+        height: 720,
+        margin: 0.04,
+        center: false,
+        hash: true,
+        slideNumber: "c/t",
+        transition: "fade",
+        plugins: [RevealNotes, RevealHighlight],
+      });
+    </script>
+  </body>
 </html>
